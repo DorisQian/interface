@@ -1,0 +1,291 @@
+2018-03-30 14:29:58,332-INFO testing [Logger.py:46]
+2018-03-30 14:30:31,537 INFO testing [Logger.py:46]
+2018-03-30 14:30:52,019 INFO  [Logger.py:46] testing
+2018-03-30 14:31:08,445 INFO [Logger.py:46]  testing
+2018-03-30 14:32:32,177 INFO [Logger.py:46]  testing
+2018-03-30 15:09:49,368 INFO [Logger.py:46]  <suds.client.Method object at 0x000002A3F699CEF0>
+2018-03-30 15:10:09,627 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:12:59,809 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:14:17,564 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:14:38,139 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:14:51,469 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:16:30,002 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:17:56,870 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:18:06,073 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:18:13,356 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "非法请求！"
+   resultVal = None
+ }
+2018-03-30 15:32:02,743 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>H+i17CLP5p6AKwM/oAU96IVpB0zcZwUW</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 15:32:03 CST 2018</LoginTime><UpdateTime>Fri Mar 30 15:32:03 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 15:32:22,674 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>4dJfbJj+gynHsLF5esUuAE3Yrqlg99iK</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 15:32:23 CST 2018</LoginTime><UpdateTime>Fri Mar 30 15:32:23 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 15:32:22,693 INFO [Logger.py:46]  None
+2018-03-30 15:36:07,838 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>GdAG+31XcD1znYwX2wqarUFCtiYvRBTb</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 15:36:08 CST 2018</LoginTime><UpdateTime>Fri Mar 30 15:36:08 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 15:36:34,546 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>TnACmppgdJkkhl/zlTG6LfRSbetqAxqL</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 15:36:35 CST 2018</LoginTime><UpdateTime>Fri Mar 30 15:36:35 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:13:45,346 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>0rBh4c2b7OXxlC+ppzDbVlHzuype8ctC</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:13:46 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:13:46 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:15:26,547 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>Q3xGgHvOVB/p6j0B5HnMZNJbTRZJZ+VO</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:15:27 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:15:27 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:15:34,373 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>gUEuAXw0HS9XijOLdA+7gD3BdBaASWBd</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:15:35 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:15:35 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:16:38,151 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>NxqaSjn4l1au9BqvS96AS/wa7z3yU9Ta</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:16:38 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:16:38 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:17:28,264 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:32:42,483 INFO [Logger.py:46]  right
+2018-03-30 16:32:42,484 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "当前用户已被锁定，请5分钟之后重试！"
+   resultVal = None
+ }
+2018-03-30 16:32:42,548 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:32:42,551 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "当前用户已被锁定，请5分钟之后重试！"
+   resultVal = None
+ }
+2018-03-30 16:35:06,651 INFO [Logger.py:46]  right
+2018-03-30 16:35:06,655 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:35:06,696 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:35:06,697 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有3次机会。"
+   resultVal = None
+ }
+2018-03-30 16:35:22,335 INFO [Logger.py:46]  right
+2018-03-30 16:35:22,336 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>7WdP7syLb0HvsnRVyVvPQou5e28jPR+L</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:35:23 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:35:23 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:35:22,360 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:35:22,362 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:35:46,805 INFO [Logger.py:46]  right
+2018-03-30 16:35:46,806 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>DGdbD9a1ogwXph5mYdN2NG28+MJPrIpI</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:35:47 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:35:47 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:35:46,873 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:35:46,877 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:35:58,265 INFO [Logger.py:46]  right
+2018-03-30 16:35:58,266 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>Ty2X55wBAsoGXiPTJcVJRDPN6RPTLA4U</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:35:59 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:35:59 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:35:58,284 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:35:58,285 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:37:51,700 INFO [Logger.py:46]  right
+2018-03-30 16:37:51,701 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>07XVTLOnc2RYQkxnnXErl1ExXmFzaD3d</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:37:52 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:37:52 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:37:51,718 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:37:51,719 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:38:29,647 INFO [Logger.py:46]  right
+2018-03-30 16:38:29,648 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>Dv4wlF93SvbFc7mBJCSAGWslIiqlGNnX</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:38:30 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:38:30 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:38:29,674 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:38:29,675 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:38:49,847 INFO [Logger.py:46]  right
+2018-03-30 16:38:49,849 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>pVUEtBrDjyQnC8Uo2ZvG6/+a1+nrlzqx</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:38:50 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:38:50 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:38:49,873 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:38:49,874 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:39:13,122 INFO [Logger.py:46]  right
+2018-03-30 16:39:13,123 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>mSyrgdW6cU3NB5CcCAOJmZW/UbnQ1VWe</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:39:13 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:39:13 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:39:13,139 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:39:13,140 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:41:19,339 INFO [Logger.py:46]  right
+2018-03-30 16:41:19,340 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>f6gLm+zhz86fiCayU/xO9hnviFlQo4Jj</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:41:20 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:41:20 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:41:19,387 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:41:19,390 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:41:31,495 INFO [Logger.py:46]  right
+2018-03-30 16:41:31,496 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>SaDghSjIbo/HkvcVTLqYbsmiqEu6Suv+</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:41:32 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:41:32 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:41:31,521 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:41:31,522 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:45:49,637 INFO [Logger.py:46]  right
+2018-03-30 16:45:49,638 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>N5VBvLw7QZGEtivPipI704HtPmhcuD1Q</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:45:50 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:45:50 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:45:49,718 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:45:49,719 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:46:06,708 INFO [Logger.py:46]  right
+2018-03-30 16:46:06,710 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>vpmhZcmOpjJWKvqTYZls8QIhCMM2Asji</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:46:07 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:46:07 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:46:06,731 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:46:06,732 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:47:20,134 INFO [Logger.py:46]  right
+2018-03-30 16:47:20,135 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>f+nSL5g17PTRp6qS+iBnZUV27ytcuj2h</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:47:20 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:47:20 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:47:20,152 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:47:20,153 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 16:47:37,411 INFO [Logger.py:46]  right
+2018-03-30 16:47:37,412 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>x7N+yQhV1JeMbtpqFcdtyMRUgxFn69fP</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 16:47:38 CST 2018</LoginTime><UpdateTime>Fri Mar 30 16:47:38 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 16:47:37,430 INFO [Logger.py:46]  wrong_password
+2018-03-30 16:47:37,431 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
+2018-03-30 17:25:49,315 INFO [Logger.py:46]  generated report reports\2018-03-30_17-25-49_result.html
+2018-03-30 17:25:49,382 INFO [Logger.py:46]  add case <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_login.Login testMethod=test_right>, <test_login.Login testMethod=test_wrong_password>]>]> to testSuit
+2018-03-30 17:25:49,538 INFO [Logger.py:46]  right
+2018-03-30 17:25:49,539 INFO [Logger.py:46]  (WSResult){
+   errorCode = 0
+   errorString = None
+   resultVal = "<UserProfile><UserId>19</UserId><LoginId>cfgadmin</LoginId><UserName>配置管理员</UserName><UserToken>a/3M9aUh6nO6RhX2TP887EFzRuSWMbe2</UserToken><HomePath></HomePath><PathSize>0</PathSize><RightLevel>0</RightLevel><UserGroups></UserGroups><UserRoles>11</UserRoles><UserType>0</UserType><LoginTime>Fri Mar 30 17:25:50 CST 2018</LoginTime><UpdateTime>Fri Mar 30 17:25:50 CST 2018</UpdateTime><UserParam></UserParam></UserProfile>"
+ }
+2018-03-30 17:25:49,572 INFO [Logger.py:46]  wrong_password
+2018-03-30 17:25:49,573 INFO [Logger.py:46]  (WSResult){
+   errorCode = -1
+   errorString = "密码错误!您还有4次机会。"
+   resultVal = None
+ }
