@@ -23,9 +23,10 @@ class Logger:
         logger = logging.getLogger()
         logger.setLevel(self.level)
 
-        path = os.path.abspath('logs') + os.sep
+        path = os.getcwd().split('interface')[0] + 'interface' + os.sep + 'logs' + os.sep
         date = time.strftime('%Y-%m-%d')
         file = path + date + '.log'
+        # print(file)
 
         ch = logging.StreamHandler()
         ch.setLevel(self.level)
