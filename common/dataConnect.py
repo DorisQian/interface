@@ -26,7 +26,7 @@ class Database:
 			self.cursor.execute(sql)
 			self.logger.info(sql)
 			result = self.cursor.fetchall()
-			self.logger.info('the result: %s' % result)
+			self.logger.info('the result: %s' % (result, ))
 			return result
 		except Exception as msg:
 			self.logger.error(msg)
@@ -77,4 +77,7 @@ class Database:
 if __name__ == '__main__':
 	query = Database()
 	s = query.query('select MAN_ID from bmp_manufacturers limit 20')
-	print(s)
+	l =[]
+	for n in s:
+		l.append(n[0])
+	print(l)

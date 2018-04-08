@@ -45,14 +45,24 @@ class Manufacturer(unittest.TestCase):
 		with open(self.file, 'w+', encoding='utf8') as f:
 			print(str(result).split('resultVal = "')[1].rstrip(' }').strip('"\n'), file=f)
 
+		xml_result = Parse(self.ro)
 		# 查询数据库进行断言
+		re = xml_result.get_total()
 		mysql = self.data.query('select count(1) from bmp_manufacturers')[0][0]
-		re = Parse(self.ro).get_total()
-		self.assertEqual(result['errorCode'], 0)
+		self.logger.info('mysql result is %s' % mysql)
 		self.assertEqual(mysql, int(re))
+
+		id_database_list = []
+		id_xml_list = xml_result.get_tag_value('Record/MAN_ID')
+		id_xml_list = [int(man_id) for man_id in id_xml_list]
 		man_id = self.data.query('select MAN_ID from bmp_manufacturers limit 20')
+		for id in man_id:
+			id_database_list.append(id[0])
+		self.logger.info('id_xml_list: %s' % id_xml_list)
+		self.logger.info('id_database_list: %s' % id_database_list)
+		self.assertEqual(id_database_list, id_xml_list)
+		self.assertEqual(result['errorCode'], 0)
 		self.data.db.close()
-		print(man_id)
 
 	@classmethod
 	def tearDownClass(cls):

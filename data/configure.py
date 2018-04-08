@@ -3,12 +3,13 @@
 
 # http://10.0.190.103:8080/JNMP20/services/BMPSystemService?wsdl
 conf = {
-	'url': 'http://172.17.1.207:8080/SOC2.0/services/BMPSystemService?wsdl',
+	'url': 'http://127.0.0.1:8080/SOC2.0/services/BMPSystemService?wsdl',
 	'db': {
-		'host': '172.17.1.213',
+		'host': '192.168.0.120',
 		'port': 3306,
 		'user': 'root',
 		'password': 'Anchiva@123',
-		'db': 'cntv'
+		'db': 'cntv',
+		'charset': 'utf8'
 	}
 }

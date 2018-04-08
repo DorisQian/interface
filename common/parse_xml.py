@@ -58,8 +58,22 @@ class Parse:
 		"""
 		for elem in self.tree.iterfind('Record1/TotalCount'):
 			total = elem.text
+		self.logger.info('parse xml get total:%s' % total)
 		return total
 
+	def get_tag_value(self, node):
+		u"""
+		获取node中的value值，写入list中
+		:param node: 具体node参数
+		:return: 返回最终值组成的list
+		"""
+		result = []
+		for elem in self.tree.iterfind(node):
+			result.append(elem.text)
+		self.logger.info('paras xml get tag value %s' % result)
+		return result
+
+
 if __name__ == '__main__':
-	a = Parse(name='bmpObjQuery.xml')
-	a.get_parm()
+	a = Parse(name='result.xml')
+	a.get_tag_value('Record/MAN_ID')

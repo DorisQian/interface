@@ -32,7 +32,7 @@ class Logger:
         ch.setLevel(self.level)
 
         # save five days log(backupcount)
-        fh = handlers.TimedRotatingFileHandler(file, when='D', interval=1, backupCount=5)
+        fh = handlers.TimedRotatingFileHandler(file, when='D', interval=1, backupCount=5, encoding='utf8')
         fh.setLevel(self.level)
         fh.suffix = '%Y-%m-%d.log'
 
@@ -67,7 +67,8 @@ class Logger:
     def error(self, message):
         self.output_log('error', message)
 
-
+'''
 if __name__ == '__main__':
     logger = Logger('INFO')
     logger.info('testing')
+'''
