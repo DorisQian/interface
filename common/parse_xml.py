@@ -21,13 +21,14 @@ class Parse:
 		self.file = self.path + name
 		self.logger.info(u'解析参数文件: %s' % self.file)
 
+		self.tree = ElementTree(file=self.file)
+
 	def parse_xml(self):
 		u"""
-		解析xml，获取所有节点信息
+		解析xml，获取所有节点信息,根据节点拼接正则
 		:return: 正则模型pattern
 		"""
-		tree = ElementTree(file=self.file)
-		roots = tree.getroot()
+		roots = self.tree.getroot()
 		pattern = []
 		for node in roots:
 			patt = '<%s>(.*?)</%s>' % (node.tag, node.tag)
@@ -38,7 +39,7 @@ class Parse:
 	def get_parm(self, pattern):
 		u"""
 		:param pattern: 匹配的正则
-		:return: 获取到的参数
+		:return: 获取到的参数，queryinfo
 		"""
 		try:
 			with open(self.file, 'r') as f:
@@ -49,6 +50,15 @@ class Parse:
 			return matches
 		except FileNotFoundError as msg:
 			self.logger.error(msg)
+
+	def get_total(self):
+		u"""
+		获得response中总记录条数
+		:return: 返回记录数count（1）
+		"""
+		for elem in self.tree.iterfind('Record1/TotalCount'):
+			total = elem.text
+		return total
 
 if __name__ == '__main__':
 	a = Parse(name='bmpObjQuery.xml')

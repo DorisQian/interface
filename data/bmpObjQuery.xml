@@ -87,4 +87,24 @@
     <ResultFields>distinct M.MAN_NAME,M.MAN_NAME as MAN_ID</ResultFields>
 </SqlQuery>
 </node3>
+
+<manufacturer>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy></OrderBy>
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName></AliasName>
+    </QueryTable>
+    <OrderString></OrderString>
+    <Conditions></Conditions>
+</SqlQuery>
+</manufacturer>
+
 </root>
