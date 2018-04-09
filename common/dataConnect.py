@@ -2,8 +2,8 @@
 # -*- coding = utf-8 -*-
 
 from data import configure
-from common.Logger import Logger
 import pymysql
+import logging
 
 
 class Database:
@@ -11,25 +11,56 @@ class Database:
 	数据库连接与操作
 	"""
 	def __init__(self):
-		self.logger = Logger('INFO')
 		conf = configure.conf['db']
-		self.db = pymysql.connect(**conf)
-		self.cursor = self.db.cursor()
+		self._con = pymysql.connect(**conf)
+		self._cursor = self._con.cursor()
 
-	def query(self, sql):
-		"""
-		查询所有结果
-		:param sql: 传入的sql语句
+	def execute(self, sql=''):
+		u"""
+		执行sql语句，针对读操作返回结果集
+		:param sql: sql语句
 		:return: 查询结果
 		"""
 		try:
-			self.cursor.execute(sql)
-			self.logger.info(sql)
-			result = self.cursor.fetchall()
-			self.logger.info('the result: %s' % (result, ))
-			return result
-		except Exception as msg:
-			self.logger.error(msg)
+			self._cursor.execute(sql)
+			records = self._cursor.fetchall()
+			return records
+		except pymysql.Error as msg:
+			logging.error('MySQL execute failed! Error:%s' % msg)
+
+	def commit(self, sql=''):
+		u"""
+		执行sql语句，针对更新，删除，事务等操作失败时回滚
+		:param sql:sql语句
+		:return:error信息
+		"""
+		try:
+			self._cursor.execute(sql)
+			self._con.commit()
+		except pymysql.Error as msg:
+			self._con.rollback()
+			error = 'MySQL execute failed! Error:%s' % msg
+			logging.error(error)
+			return error
+
+	def select(self, tablename, where_dic='', order='', fields='*'):
+		where_sql = ' '
+		if where_dic:
+			for k, v in where_dic.items():
+				where_sql = where_sql + k + '=' + v + ' and'
+		where_sql += '1=1'
+		if fields == '*':
+			sql = 'select * from %s where' % tablename
+		else:
+			try:
+				isinstance(fields, list)
+				field = ','.join(fields)
+				sql = 'select %s from %s where' % (field, tablename)
+			except:
+				raise 'fields input error, please input list fields.'
+		sql = sql + where_sql + order
+		logging.info(sql)
+		return self.execute(sql)
 
 	def insert(self, sql):
 		u"""
@@ -38,12 +69,12 @@ class Database:
 		:return:
 		"""
 		try:
-			self.cursor.execute(sql)
-			self.db.commit()
-			self.logger.info(sql)
+			self._cursor.execute(sql)
+			self._con.commit()
+			logging.info(sql)
 		except Exception as msg:
-			self.db.rollback()
-			self.logger.error(msg)
+			self._con.rollback()
+			logging.error('MySQL execute failed ! Error:%s' % msg)
 
 	def update(self, sql):
 		u"""
@@ -52,12 +83,12 @@ class Database:
 		:return:
 		"""
 		try:
-			self.cursor.execute(sql)
-			self.db.commit()
-			self.logger.info(sql)
+			self._cursor.execute(sql)
+			self._con.commit()
+			logging.info(sql)
 		except Exception as msg:
-			self.db.rollback()
-			self.logger.error(msg)
+			self._con.rollback()
+			logging.error(msg)
 
 	def delete(self, sql):
 		u"""
@@ -66,18 +97,19 @@ class Database:
 		:return:
 		"""
 		try:
-			self.cursor.execute(sql)
-			self.db.commit()
-			self.logger.info(sql)
+			self._cursor.execute(sql)
+			self._con.commit()
+			logging.info(sql)
 		except Exception as msg:
-			self.db.rollback()
-			self.logger.error(msg)
+			self._con.rollback()
+			logging.error(msg)
 
+	def close(self):
+		self._con.close()
 
 if __name__ == '__main__':
+	from common.Logger import Logger
+	logger = Logger()
 	query = Database()
-	s = query.query('select MAN_ID from bmp_manufacturers limit 20')
-	l =[]
-	for n in s:
-		l.append(n[0])
-	print(l)
+	s = query.select(tablename='bmp_manufacturers', fields='MAN_ID')
+	print(s)

@@ -11,64 +11,36 @@ class Logger:
     """
     output logs to console and log files
     """
-    def __init__(self, level):
-        self.level = level
-
-    def output_log(self, level, message):
-        """
-        :param level: set log level
-        :param message: output to file or console
+    def __init__(self):
+        U"""
+        封装log类
         :return:
         """
-        logger = logging.getLogger()
-        logger.setLevel(self.level)
+        self.logging = logging
+        self.logger = logging.getLogger()
+        self.logger.setLevel('INFO')
 
         path = os.getcwd().split('interface')[0] + 'interface' + os.sep + 'logs' + os.sep
         date = time.strftime('%Y-%m-%d')
         file = path + date + '.log'
-        # print(file)
 
         ch = logging.StreamHandler()
-        ch.setLevel(self.level)
+        # ch.setLevel(self.level)
 
         # save five days log(backupcount)
         fh = handlers.TimedRotatingFileHandler(file, when='D', interval=1, backupCount=5, encoding='utf8')
-        fh.setLevel(self.level)
+        # fh.setLevel(self.level)
         fh.suffix = '%Y-%m-%d.log'
 
         log_format = logging.Formatter('%(asctime)s %(levelname)s [%(filename)s:%(lineno)d]  %(message)s')
         ch.setFormatter(log_format)
         fh.setFormatter(log_format)
 
-        logger.addHandler(ch)
-        logger.addHandler(fh)
+        self.logger.addHandler(ch)
+        self.logger.addHandler(fh)
 
-        if level == 'info':
-            logging.info(message)
-        elif level == 'debug':
-            logging.debug(message)
-        elif level == 'warning':
-            logging.warning(message)
-        elif level == 'error':
-            logging.error(message)
 
-        logger.removeHandler(ch)
-        logger.removeHandler(fh)
-
-    def debug(self, message):
-        self.output_log('debug', message)
-
-    def info(self, message):
-        self.output_log('info', message)
-
-    def warning(self, message):
-        self.output_log('warning', message)
-
-    def error(self, message):
-        self.output_log('error', message)
-
-'''
 if __name__ == '__main__':
-    logger = Logger('INFO')
-    logger.info('testing')
-'''
+    logger = Logger()
+    logging.info('testing')
+    logging.error('test111')

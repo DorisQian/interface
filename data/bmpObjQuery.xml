@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf8'?>
 <root>
 <test1>
     <SqlQuery>
@@ -6,14 +6,14 @@
         <SC>
             <SLT>0</SLT>
             <PN>A.CLASS_ID</PN>
-            <PV></PV>
+            <PV />
             <SRT>0</SRT>
             <SPT>1</SPT>
         </SC>
         <SC>
             <SLT>0</SLT>
             <PN>C.MAN_ID</PN>
-            <PV></PV>
+            <PV />
             <SRT>0</SRT>
             <SPT>1</SPT>
         </SC>
@@ -75,10 +75,9 @@
     <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
 </SqlQuery>
 </node2>
-
 <node3>
 <SqlQuery>
-    <Conditions></Conditions>
+    <Conditions />
     <KeyId>M.MAN_ID</KeyId>
     <QueryTable>
         <TableName>bmp_manufacturers</TableName>
@@ -88,23 +87,23 @@
 </SqlQuery>
 </node3>
 
-<manufacturer>
+<Manufacturer>
 <SqlQuery>
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>1</CurrentPage>
+        <CurrentPage>2</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
-        <OrderBy></OrderBy>
+        <OrderBy />
     </PageInfo>
     <QueryTable>
         <TableName>BMP_MANUFACTURERS</TableName>
-        <AliasName></AliasName>
+        <AliasName />
     </QueryTable>
-    <OrderString></OrderString>
-    <Conditions></Conditions>
+    <OrderString />
+    <Conditions />
 </SqlQuery>
-</manufacturer>
+</Manufacturer>
 
 </root>
