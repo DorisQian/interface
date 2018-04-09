@@ -43,66 +43,96 @@ class Database:
 			logging.error(error)
 			return error
 
-	def select(self, tablename, where_dic='', order='', fields='*'):
+	def select(self, tablename, where_dic='', order='', fields='*', limit=''):
+		u"""
+		查询数据
+		:param tablename:表名
+		:param where_dic:where条件，dict类型
+		:param order:order by 或者 group by 需带关键字写全
+		:param fields:展示的列名
+		:param limit:直接传入条数str型，例如 '10，20'
+		:return:执行execute
+		"""
 		where_sql = ' '
 		if where_dic:
 			for k, v in where_dic.items():
 				where_sql = where_sql + k + '=' + v + ' and'
 		where_sql += '1=1'
-		if fields == '*':
-			sql = 'select * from %s where' % tablename
+		if limit:
+			limit_sql = ' limit ' + limit
 		else:
-			try:
-				isinstance(fields, list)
-				field = ','.join(fields)
-				sql = 'select %s from %s where' % (field, tablename)
-			except:
-				raise 'fields input error, please input list fields.'
-		sql = sql + where_sql + order
+			limit_sql = ''
+		try:
+			if fields == '*':
+				sql = 'select * from %s where' % tablename
+			else:
+				if isinstance(fields, list):
+					field = ','.join(fields)
+					sql = 'select %s from %s where' % (field, tablename)
+				else:
+					raise TypeError('fields input error, please input list fields.')
+			sql += where_sql + order + limit_sql
+			logging.info(sql)
+			return self.execute(sql)
+		except TypeError as msg:
+			logging.error(msg)
+
+	def insert(self, tablename, args):
+		u"""
+		插入单条数据
+		:param tablename: 表名
+		:param args: 插入的数据，dict类型 例如：{'MAN_ID': '350', 'MAN_NAME': 'TEST'}
+		:return: 执行commit函数
+		"""
+		key, value = [], []
+		for tmp_key, tmp_value in args.items():
+			key.append(tmp_key)
+			if isinstance(tmp_value, str):
+				value.append('\'' + tmp_value + '\'')
+			else:
+				value.append(tmp_value)
+		key_sql = ' (' + ','.join(key) + ')'
+		value_sql = ' values (' + ','.join(value) + ')'
+		sql = 'insert into %s' % tablename
+		sql += key_sql + value_sql
 		logging.info(sql)
-		return self.execute(sql)
+		return self.commit(sql)
 
-	def insert(self, sql):
+	def update(self, tablename, new_dict, where_dict):
 		u"""
-		插入操作
-		:param sql: 传入的sql语句
-		:return:
+		更新数据
+		:param tablename: 表名
+		:param new_dict: 更新后的数据，新数据，dict型，对应字段：值
+		:param where_dict: 判断条件，及where语句，dict型，对应 字段：值
+		:return: 执行commit
 		"""
-		try:
-			self._cursor.execute(sql)
-			self._con.commit()
-			logging.info(sql)
-		except Exception as msg:
-			self._con.rollback()
-			logging.error('MySQL execute failed ! Error:%s' % msg)
+		new_param = []
+		for k, v in new_dict.items():
+			new_param.append('%s=\'%s\'' % (k, v))
+		new_sql = ','.join(new_param)
 
-	def update(self, sql):
-		u"""
-		更新操作
-		:param sql: 传入的sql语句
-		:return:
-		"""
-		try:
-			self._cursor.execute(sql)
-			self._con.commit()
-			logging.info(sql)
-		except Exception as msg:
-			self._con.rollback()
-			logging.error(msg)
+		for key, value in where_dict.items():
+			if not isinstance(value, str):
+				value = '\'' + str(value) + '\''
+			where = key + '=' + value + ' and '
+			where += '1=1'
+		sql = 'update %s set %s where %s' % (tablename, new_sql, where)
+		logging.info(sql)
+		return self.commit(sql)
 
-	def delete(self, sql):
+	def delete(self, tablename, where_dict):
 		u"""
-		删除操作
-		:param sql: 传入的sql语句
-		:return:
+		删除数据
+		:param tablename:表名
+		:param where_dict:where条件，dict型，对应 字段：值
+		:return:执行commit方法
 		"""
-		try:
-			self._cursor.execute(sql)
-			self._con.commit()
-			logging.info(sql)
-		except Exception as msg:
-			self._con.rollback()
-			logging.error(msg)
+		for k, v in where_dict.items():
+			where_sql = k + '=\'' + v + '\'' + ' and '
+		where_sql += '1=1'
+		sql = 'delete from %s where %s' % (tablename, where_sql)
+		logging.info(sql)
+		return self.commit(sql)
 
 	def close(self):
 		self._con.close()
@@ -110,6 +140,15 @@ class Database:
 if __name__ == '__main__':
 	from common.Logger import Logger
 	logger = Logger()
+	param = {'MAN_ID': '350', 'MAN_NAME': 'TEST', 'MAN_DESC': 'TEST1', 'FIELD_1': 'WIND', 'CLASS_ID': '100105'}
+	new_args = {'MAN_DESC': 'TEST123'}
+	where_args = {'MAN_ID': '350'}
 	query = Database()
-	s = query.select(tablename='bmp_manufacturers', fields='MAN_ID')
-	print(s)
+	# a = query.select(tablename='bmp_manufacturers')
+	# b = query.insert(tablename='bmp_manufacturers', args=param)
+	# c = query.update(tablename='bmp_manufacturers', new_dict=new_args, where_dict=where_args)
+	# d = query.delete(tablename='bmp_manufacturers', where_dict=where_args)
+	a = query.execute('select MAN_ID from bmp_manufacturers where 1=1 limit 0,20')
+	b = query.execute('select MAN_ID from bmp_manufacturers where 1=1 limit 20,20')
+	print(a)
+	print(b)

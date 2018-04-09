@@ -31,7 +31,6 @@ class Parse:
 		for node in roots:
 			patt = '<%s>(.*?)</%s>' % (node.tag, node.tag)
 			pattern.append(patt)
-		logging.info(u'正则模型：%s' % pattern)
 		return pattern
 
 	def get_parm(self, pattern):
@@ -71,7 +70,7 @@ class Parse:
 		result = []
 		for elem in self.tree.iterfind(node):
 			result.append(elem.text)
-		logging.info('paras xml get tag value %s' % result)
+		# logging.info('paras xml get tag value %s' % result)
 		return result
 
 	def set_current_page(self, node, page):
