@@ -84,7 +84,7 @@ class Parse:
 		full_node = node + '/SqlQuery/PageInfo/CurrentPage'
 		for elem in self._tree.iterfind(full_node):
 			elem.text = str(page)
-		self._tree.write(self._file, encoding='utf8', xml_declaration=True)
+		self._tree.write(self._file, encoding='UTF-8', xml_declaration=True)
 
 	def get_case_param(self, total=0, change=0, page=1, tag=''):
 		u"""
