@@ -14,46 +14,47 @@ class Parse:
 	"""
 	def __init__(self, name):
 		u"""
-		:param name:xml具体文件
+		:param name:xml具体文件,以data为根目录
 		"""
-		self.path = os.path.abspath('../') + os.sep + 'data' + os.sep
-		self.file = self.path + name
-		logging.info(u'解析参数文件: %s' % self.file)
-		self.tree = ElementTree(file=self.file)
+		self._name = name
+		self._path = os.path.abspath('../') + os.sep + 'data' + os.sep
+		self._file = self._path + self._name
+		logging.info(u'解析参数文件: %s' % self._file)
+		self._tree = ElementTree(file=self._file)
 
-	def parse_xml(self):
+	def _parse_xml(self):
 		u"""
-		解析xml，获取所有节点信息,根据节点拼接正则
-		:return: 正则模型pattern
+		解析xml，获取所有二层节点,根据节点拼接正则
+		:return: 正则模型pattern 如['<test1>(.*?)</test1>', '<node2>(.*?)</node2>']
 		"""
-		roots = self.tree.getroot()
+		roots = self._tree.getroot()
 		pattern = []
 		for node in roots:
 			patt = '<%s>(.*?)</%s>' % (node.tag, node.tag)
 			pattern.append(patt)
 		return pattern
 
-	def get_parm(self, pattern):
+	def _get_parm(self, pattern):
 		u"""
-		:param pattern: 匹配的正则
-		:return: 获取到的参数，queryinfo
+		通过正则匹配到标签，获取标签下数据，返回数据即接口参数
+		:param pattern: 要匹配的正则，例如<Manufacturer>(.*?)</Manufacturer>
+		:return: 获取到的参数，queryinfo，便签下的全部数据
 		"""
 		try:
-			with open(self.file, 'r', encoding='utf8') as f:
+			with open(self._file, 'r', encoding='utf8') as f:
 				content = ''.join([i.strip() for i in f.readlines()])
-			# print(content)
 			matches = re.findall(pattern, content)
 			logging.info(u'获取参数：%s' % matches)
 			return matches
 		except FileNotFoundError as msg:
 			logging.error(msg)
 
-	def get_total(self):
+	def _get_total(self):
 		u"""
 		获得response中总记录条数
 		:return: 返回记录数count（1）
 		"""
-		for elem in self.tree.iterfind('Record1/TotalCount'):
+		for elem in self._tree.iterfind('Record1/TotalCount'):
 			total = elem.text
 		try:
 			logging.info('parse xml get total:%s' % total)
@@ -61,19 +62,19 @@ class Parse:
 		except UnboundLocalError as msg:
 			logging.error('there\'re no total node. The error message:%s' % msg)
 
-	def get_tag_value(self, node):
+	def _get_tag_value(self, node):
 		u"""
 		获取某标签中的value值，将标签名称为此的value写入list中
 		:param node: 具体node参数
 		:return: 返回最终值组成的list
 		"""
 		result = []
-		for elem in self.tree.iterfind(node):
+		for elem in self._tree.iterfind(node):
 			result.append(elem.text)
 		# logging.info('paras xml get tag value %s' % result)
 		return result
 
-	def set_current_page(self, node, page):
+	def _set_current_page(self, node, page):
 		u"""
 		修改显示的当前页数，实现翻页
 		:param node: 要修改页数的二层根节点,string
@@ -81,12 +82,45 @@ class Parse:
 		:return: 重写xml文件
 		"""
 		full_node = node + '/SqlQuery/PageInfo/CurrentPage'
-		for elem in self.tree.iterfind(full_node):
+		for elem in self._tree.iterfind(full_node):
 			elem.text = str(page)
-		self.tree.write(self.file, encoding='utf8', xml_declaration=True)
+		self._tree.write(self._file, encoding='utf8', xml_declaration=True)
+
+	def get_case_param(self, total=0, change=0, page=1, tag=''):
+		u"""
+		封装xml各方法，实现参数、标签值的获取和xml的改变
+		:param total: 是否计算total，一般与result.xml合用，1是获取，0不获取，默认为不获取
+		:param change: 是否改变xml，一般与非结果xml合用，1为改变，默认为0不改变，改变显示页数
+		:param page: 为当前页数current，page为改变值
+		:param tag: 标签名称，例如'Record/MAN_ID'，'Manufacturer'
+		:return: 返回取值结果，接口参数param，total值 re，
+		"""
+		if self._name != 'result.xml' and change == 0:
+			# 获取接口参数，访问接口，返回结果result
+			pattern = self._parse_xml()
+			try:
+				for pat in pattern:
+					if tag in pat:
+						logging.info(u'匹配正则: %s' % pat)
+						param = self._get_parm(pat)
+				parm = {'queryInfo': param}
+				return parm
+			except UnboundLocalError as msg:
+				logging.error(u'没有匹配到正则，获取参数失败。error：%' % msg)
+
+		elif self._name != 'result.xml' and change == 1:
+			self._set_current_page(tag, page)
+
+		elif self._name == 'result.xml' and total == 1:  # 解析结果文件，用以断言
+			amount = self._get_total()  # 获取total值
+			return amount
+		else:
+			tag_value = self._get_tag_value(tag)
+			return tag_value
+
 
 if __name__ == '__main__':
 	from common.Logger import Logger
 	logger = Logger()
 	a = Parse(name='bmpObjQuery.xml')
-	a.get_total()
+

@@ -92,7 +92,7 @@
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>2</CurrentPage>
+        <CurrentPage>3</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
         <OrderBy />
@@ -106,4 +106,30 @@
 </SqlQuery>
 </Manufacturer>
 
+<Manuquery>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>戴尔</PV>
+            <SRT>17</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Manuquery>
 </root>

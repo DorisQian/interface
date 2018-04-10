@@ -15,7 +15,7 @@ class Database:
 		self._con = pymysql.connect(**conf)
 		self._cursor = self._con.cursor()
 
-	def execute(self, sql=''):
+	def _execute(self, sql=''):
 		u"""
 		执行sql语句，针对读操作返回结果集
 		:param sql: sql语句
@@ -28,7 +28,7 @@ class Database:
 		except pymysql.Error as msg:
 			logging.error('MySQL execute failed! Error:%s' % msg)
 
-	def commit(self, sql=''):
+	def _commit(self, sql=''):
 		u"""
 		执行sql语句，针对更新，删除，事务等操作失败时回滚
 		:param sql:sql语句
@@ -43,7 +43,7 @@ class Database:
 			logging.error(error)
 			return error
 
-	def select(self, tablename, where_dic='', order='', fields='*', limit=''):
+	def select(self, tablename, fields='*', where_dic='', order='', limit=''):
 		u"""
 		查询数据
 		:param tablename:表名
@@ -56,7 +56,7 @@ class Database:
 		where_sql = ' '
 		if where_dic:
 			for k, v in where_dic.items():
-				where_sql = where_sql + k + '=' + v + ' and'
+				where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
 		where_sql += '1=1'
 		if limit:
 			limit_sql = ' limit ' + limit
@@ -73,7 +73,7 @@ class Database:
 					raise TypeError('fields input error, please input list fields.')
 			sql += where_sql + order + limit_sql
 			logging.info(sql)
-			return self.execute(sql)
+			return self._execute(sql)
 		except TypeError as msg:
 			logging.error(msg)
 
@@ -96,7 +96,7 @@ class Database:
 		sql = 'insert into %s' % tablename
 		sql += key_sql + value_sql
 		logging.info(sql)
-		return self.commit(sql)
+		return self._commit(sql)
 
 	def update(self, tablename, new_dict, where_dict):
 		u"""
@@ -118,7 +118,7 @@ class Database:
 			where += '1=1'
 		sql = 'update %s set %s where %s' % (tablename, new_sql, where)
 		logging.info(sql)
-		return self.commit(sql)
+		return self._commit(sql)
 
 	def delete(self, tablename, where_dict):
 		u"""
@@ -132,7 +132,7 @@ class Database:
 		where_sql += '1=1'
 		sql = 'delete from %s where %s' % (tablename, where_sql)
 		logging.info(sql)
-		return self.commit(sql)
+		return self._commit(sql)
 
 	def close(self):
 		self._con.close()
@@ -148,7 +148,3 @@ if __name__ == '__main__':
 	# b = query.insert(tablename='bmp_manufacturers', args=param)
 	# c = query.update(tablename='bmp_manufacturers', new_dict=new_args, where_dict=where_args)
 	# d = query.delete(tablename='bmp_manufacturers', where_dict=where_args)
-	a = query.execute('select MAN_ID from bmp_manufacturers where 1=1 limit 0,20')
-	b = query.execute('select MAN_ID from bmp_manufacturers where 1=1 limit 20,20')
-	print(a)
-	print(b)
