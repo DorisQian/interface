@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <root>
 <test1>
     <SqlQuery>
@@ -132,4 +132,67 @@
     </Conditions>
 </SqlQuery>
 </Manuquery>
+
+<Attribchildnode>
+<!--取一级attrb下的全部子节点，例如服务器parent为11432，取子节点windows等-->
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.PARENT_ID</PN>
+            <PV>11432</PV>
+            <SRT>7</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId>A.CLASS_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_class2class</TableName>
+        <AliasName>A</AliasName>
+    </QueryTable>
+    <ResultFields>A.CLASS_ID</ResultFields>
+</SqlQuery>
+</Attribchildnode>
+
+<Attriblevle1>
+<!-- 取得子节点中level为1的所有节点，设备类型数据，如windows linux-->
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.CLASS_ID</PN>
+            <PV>11433,11434,11435,11436,11437,11438,11439,100105,100114</PV>
+            <SRT>7</SRT>
+            <SPT>0</SPT>
+        </SC>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.CLASS_LEVEL</PN>
+            <PV>1</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId>A.CLASS_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_attribclass</TableName>
+        <AliasName>A</AliasName>
+    </QueryTable>
+    <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
+</SqlQuery>
+</Attriblevle1>
+
+<Manuname>
+<!--取得所有去重厂商名称-->
+<SqlQuery>
+    <Conditions />
+    <KeyId>M.MAN_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_manufacturers</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
+</SqlQuery>
+</Manuname>
+
 </root>
