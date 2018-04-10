@@ -6,7 +6,6 @@ from common.parse_xml import Parse
 from common.dataConnect import Database
 from data import configure
 from suds.client import Client
-from configparser import ConfigParser
 from math import ceil
 import unittest
 import logging
@@ -27,9 +26,15 @@ class Manufacturer(unittest.TestCase):
 		cls.result = configure.conf['result']
 		cls.file = configure.conf['result_file']
 		cls.query = configure.manufacture['query']
+		# 查询参数
 		cls.tablename = configure.manufacture['tablename']
 		cls.fields = configure.manufacture['manid'].split(',')
 		cls.where = configure.manufacture['where']
+		# 插入参数
+		cls.class2class = configure.manufacture['class2class']
+		cls.attrib_table = configure.manufacture['attribtable']
+		cls.con_parent = configure.manufacture['where_parent']
+
 		cls.client = Client(cls.url)
 
 	def test_query_all(self):
@@ -99,6 +104,72 @@ class Manufacturer(unittest.TestCase):
 		re = rs_xml.get_case_param(total=1)
 		self.assertEqual(mysql, int(re))
 
+	def test_add_page(self):
+		u"""
+		测试增加修改页面数据查询
+		"""
+		# 数据库查询数据结果
+		classid = self.data.select(self.class2class, ['CLASS_ID'], self.con_parent)
+		id_list = [str(n[0]) for n in classid]
+		mysql_id = ','.join(id_list)
+		logging.info('上一查询结果 %s' % mysql_id)
+		conditions = {'CLASS_LEVEL': '1', 'CLASS_ID': mysql_id}
+		mysql = self.data.select(self.attrib_table, ['CLASS_ID'], conditions)
+		mysql_attr_list = [cid[0] for cid in mysql]
+		mysql_manuname = self.data.select(self.tablename, ['DISTINCT MAN_NAME'])
+		mysql_manuname = [name[0] for name in mysql_manuname]
+		mysql_total_class = self.data.select(self.class2class, ['count(1)'], self.con_parent)[0][0]
+		mysql_total_attr = self.data.select(self.attrib_table, ['count(1)'], conditions)[0][0]
+		mysql_manuname_total = self.data.select(self.tablename, ['count(1)'])[0][0]
+
+		# xml查询结果classid
+		class_xml = Parse(self.query)
+		parm = class_xml.get_case_param(tag='Attribchildnode')
+		response = self.client.service.bmpObjQuery(**parm)
+		with open(self.file, 'w+', encoding='utf8') as f:
+			print(str(response).split('resultVal = "')[1].rstrip(' }').strip('"\n'), file=f)
+
+		rs_xml = Parse(self.result)
+		xml_total_class = rs_xml.get_case_param(total=1)
+		xml_id = ','.join(rs_xml.get_case_param(tag='Record/CLASS_ID'))
+		logging.info('mysql total %s' % mysql_total_class)
+		logging.info('mysql_id %s' % mysql_id)
+		logging.info('xml_id %s' % xml_id)
+		self.assertEqual(mysql_total_class, int(xml_total_class))
+		self.assertEqual(mysql_id, xml_id)
+
+		# xml查询结果attrib
+		attr_xml = Parse(self.query)
+		parm = attr_xml.get_case_param(tag='Attriblevle1')
+		response = self.client.service.bmpObjQuery(**parm)
+		with open(self.file, 'w+', encoding='utf8') as f:
+			print(str(response).split('resultVal = "')[1].rstrip(' }').strip('"\n'), file=f)
+
+		ro_xml = Parse(self.result)
+		xml_total_attr = ro_xml.get_case_param(total=1)
+		xml_attr_list = ro_xml.get_case_param(tag='Record/CLASS_ID')
+		xml_attr_list = [int(id) for id in xml_attr_list]
+		logging.info('mysql total %s' % mysql_total_attr)
+		logging.info('mysql_attr_list %s' % mysql_attr_list)
+		logging.info('xml_attr_list %s' % xml_attr_list)
+		self.assertEqual(mysql_total_attr, int(xml_total_attr))
+		self.assertEqual(mysql_attr_list, xml_attr_list)
+
+		# xml查询结果manuname
+		manu_xml = Parse(self.query)
+		parm = manu_xml.get_case_param(tag='Manuname')
+		response = self.client.service.bmpObjQuery(**parm)
+		with open(self.file, 'w+', encoding='utf8') as f:
+			print(str(response).split('resultVal = "')[1].rstrip(' }').strip('"\n'), file=f)
+
+		r_xml = Parse(self.result)
+		xml_manuname_total = r_xml.get_case_param(total=1)
+		xml_manuname = r_xml.get_case_param(tag='Record/MAN_NAME')
+		logging.info('mysql_manuname_total %s' % mysql_manuname_total)
+		logging.info('mysql_manuname %s' % (mysql_manuname, ))
+		logging.info('xml_manuname %s' % xml_manuname)
+		self.assertEqual(mysql_manuname_total, int(xml_manuname_total))
+		self.assertEqual(mysql_manuname, xml_manuname)
 
 	@classmethod
 	def tearDownClass(cls):
