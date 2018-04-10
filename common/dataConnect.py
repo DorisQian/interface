@@ -56,7 +56,10 @@ class Database:
 		where_sql = ' '
 		if where_dic:
 			for k, v in where_dic.items():
-				where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
+				if ',' not in v:
+					where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
+				else:
+					where_sql = where_sql + k + ' in ' + '(' + v + ')' + ' and '
 		where_sql += '1=1'
 		if limit:
 			limit_sql = ' limit ' + limit
@@ -148,3 +151,5 @@ if __name__ == '__main__':
 	# b = query.insert(tablename='bmp_manufacturers', args=param)
 	# c = query.update(tablename='bmp_manufacturers', new_dict=new_args, where_dict=where_args)
 	# d = query.delete(tablename='bmp_manufacturers', where_dict=where_args)
+	test = {'CLASS_LEVEL': '1', 'CLASS_ID': '11433,11434,11435,11436,11437,11438,11439,100105,100114'}
+	a = query.select('bmp_attribclass', where_dic=test)
