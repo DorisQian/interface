@@ -89,6 +89,12 @@ class Database:
 			logging.error(msg)
 
 	def count(self, tablename, where_dic=''):
+		u"""
+		对总记录数的查询 count
+		:param tablename: 表名
+		:param where_dic: where查询条件，dict类型
+		:return: 执行execute
+		"""
 		where_sql = ' '
 		if where_dic:
 			for k, v in where_dic.items():
