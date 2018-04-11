@@ -88,6 +88,23 @@ class Database:
 		except TypeError as msg:
 			logging.error(msg)
 
+	def count(self, tablename, where_dic=''):
+		where_sql = ' '
+		if where_dic:
+			for k, v in where_dic.items():
+				if ',' in v:
+					where_sql = where_sql + k + ' in ' + '(' + v + ')' + ' and '
+				elif 'like' in v:
+					v = v.split('like')[1].strip()
+					where_sql = where_sql + k + ' like' + '\'%' + v + '%\'' + ' and '
+				else:
+					where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
+		where_sql += '1=1'
+		sql = 'select count(1) from %s where' % tablename
+		sql += where_sql
+		logging.info(sql)
+		return self._execute(sql)
+
 	def insert(self, tablename, args):
 		u"""
 		插入单条数据
