@@ -24,6 +24,11 @@ class Database:
 		try:
 			self._cursor.execute(sql)
 			records = self._cursor.fetchall()
+			if len(records) == 1:
+				records = records[0][0]
+			elif len(records) > 1:
+				if len(records[0]) == 1:
+					records = [r[0] for r in records]
 			return records
 		except pymysql.Error as msg:
 			logging.error('MySQL execute failed! Error:%s' % msg)
@@ -153,3 +158,5 @@ if __name__ == '__main__':
 	# d = query.delete(tablename='bmp_manufacturers', where_dict=where_args)
 	test = {'CLASS_LEVEL': '1', 'CLASS_ID': '11433,11434,11435,11436,11437,11438,11439,100105,100114'}
 	a = query.select('bmp_attribclass', where_dic=test)
+	mysql_manuname = query.select('bmp_manufacturers', ['DISTINCT MAN_NAME'])
+	print(mysql_manuname)
