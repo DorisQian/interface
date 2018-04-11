@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node>
+<Manufacturer>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>4</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString />
+    <Conditions />
+</SqlQuery>
+</Manufacturer>
+<Exact>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>测试添加test_add</PV>
+            <SRT>17</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Exact>
+<Fuzzy>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>安</PV>
+            <SRT>17</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Fuzzy>
+<Attribroot>
+
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.CLASS_LEVEL</PN>
+            <PV>0</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId>A.CLASS_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_attribclass</TableName>
+        <AliasName>A</AliasName>
+    </QueryTable>
+    <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
+</SqlQuery>
+
+</Attribroot>
+<Attribchildnode>
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.PARENT_ID</PN>
+            <PV>11432</PV>
+            <SRT>7</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId>A.CLASS_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_class2class</TableName>
+        <AliasName>A</AliasName>
+    </QueryTable>
+    <ResultFields>A.CLASS_ID</ResultFields>
+</SqlQuery>
+</Attribchildnode>
+<Attriblevle1>
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.CLASS_ID</PN>
+            <PV>11433,11434,11435,11436,11437,11438,11439,100105,100114</PV>
+            <SRT>7</SRT>
+            <SPT>0</SPT>
+        </SC>
+        <SC>
+            <SLT>0</SLT>
+            <PN>A.CLASS_LEVEL</PN>
+            <PV>1</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId>A.CLASS_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_attribclass</TableName>
+        <AliasName>A</AliasName>
+    </QueryTable>
+    <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
+</SqlQuery>
+</Attriblevle1>
+<Manuname>
+<SqlQuery>
+    <Conditions />
+    <KeyId>M.MAN_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_manufacturers</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
+</SqlQuery>
+</Manuname>
+
+
+<InsertManu>
+<BMP_MANUFACTURERS>
+    <MAN_NAME>测试添加test_add</MAN_NAME>
+    <MAN_DESC>测试添加test_add描述</MAN_DESC>
+</BMP_MANUFACTURERS>
+</InsertManu>
+<QueryAdded>
+<SqlQuery>
+    <Conditions />
+    <KeyId>M.MAN_ID</KeyId>
+    <QueryTable>
+        <TableName>bmp_manufacturers</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
+</SqlQuery>
+</QueryAdded>
+</node>
