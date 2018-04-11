@@ -17,7 +17,7 @@ class Parse:
 		:param name:xml具体文件,以data为根目录
 		"""
 		self._name = name
-		self._path = os.path.abspath('../') + os.sep + 'data' + os.sep
+		self._path = os.getcwd().split('interface')[0] + 'interface' + os.sep + 'data' + os.sep
 		self._file = self._path + self._name
 		logging.info(u'解析参数文件: %s' % self._file)
 		self._tree = ElementTree(file=self._file)
