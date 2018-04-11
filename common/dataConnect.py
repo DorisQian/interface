@@ -61,10 +61,13 @@ class Database:
 		where_sql = ' '
 		if where_dic:
 			for k, v in where_dic.items():
-				if ',' not in v:
-					where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
-				else:
+				if ',' in v:
 					where_sql = where_sql + k + ' in ' + '(' + v + ')' + ' and '
+				elif 'like' in v:
+					v = v.split('like')[1].strip()
+					where_sql = where_sql + k + ' like' + '\'%' + v + '%\'' + ' and '
+				else:
+					where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
 		where_sql += '1=1'
 		if limit:
 			limit_sql = ' limit ' + limit
