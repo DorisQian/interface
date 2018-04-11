@@ -5,7 +5,7 @@
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>4</CurrentPage>
+        <CurrentPage>3</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
         <OrderBy />
@@ -17,7 +17,7 @@
     <OrderString />
     <Conditions />
 </SqlQuery>
-</Manufacturer>
+</Manufacturer> 查询所有厂商
 <Exact>
 <SqlQuery>
     <IsPageResult>1</IsPageResult>
@@ -43,8 +43,34 @@
         </SC>
     </Conditions>
 </SqlQuery>
-</Exact>
+</Exact> 精确查询
 <Fuzzy>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>2</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>信</PV>
+            <SRT>17</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Fuzzy> 模糊查询
+<NullQuery>
 <SqlQuery>
     <IsPageResult>1</IsPageResult>
     <PageInfo>
@@ -63,13 +89,13 @@
         <SC>
             <SLT>0</SLT>
             <PN>MAN_NAME</PN>
-            <PV>安</PV>
+            <PV>测试查询结果为空</PV>
             <SRT>17</SRT>
             <SPT>0</SPT>
         </SC>
     </Conditions>
 </SqlQuery>
-</Fuzzy>
+</NullQuery>  查询结果为空
 <Attribroot>
 
 <SqlQuery>
@@ -90,7 +116,7 @@
     <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
 </SqlQuery>
 
-</Attribroot>
+</Attribroot> 取一级attribute，如服务器 level为0
 <Attribchildnode>
 <SqlQuery>
     <Conditions>
@@ -109,7 +135,7 @@
     </QueryTable>
     <ResultFields>A.CLASS_ID</ResultFields>
 </SqlQuery>
-</Attribchildnode>
+</Attribchildnode> 取一级attrb下的全部子节点，例如服务器parent为11432，取子节点windows等
 <Attriblevle1>
 <SqlQuery>
     <Conditions>
@@ -135,7 +161,7 @@
     </QueryTable>
     <ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields>
 </SqlQuery>
-</Attriblevle1>
+</Attriblevle1> 取得子节点中level为1的所有节点，设备类型数据，如windows linux
 <Manuname>
 <SqlQuery>
     <Conditions />
@@ -146,15 +172,14 @@
     </QueryTable>
     <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
 </SqlQuery>
-</Manuname>
-
+</Manuname> 取得所有去重厂商名称
 
 <InsertManu>
 <BMP_MANUFACTURERS>
     <MAN_NAME>测试添加test_add</MAN_NAME>
     <MAN_DESC>测试添加test_add描述</MAN_DESC>
 </BMP_MANUFACTURERS>
-</InsertManu>
+</InsertManu> 增加厂商
 <QueryAdded>
 <SqlQuery>
     <Conditions />
@@ -165,5 +190,5 @@
     </QueryTable>
     <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
 </SqlQuery>
-</QueryAdded>
+</QueryAdded> 增加后查询所有厂商名称
 </node>
