@@ -1,0 +1,609 @@
+2018-04-11 10:30:19,380 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:30:19,607 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:30:19,638 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:30:19,658 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:30:19,658 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:30:19,674 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:30:19,703 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:30:19,704 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:30:19,706 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:30:19,708 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:30:19,710 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:30:19,711 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:30:19,712 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:30:50,267 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:30:50,268 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:30:50,268 INFO [test_manufacturer.py:138]  mysql_total_attrroot 16
+2018-04-11 10:30:50,268 INFO [test_manufacturer.py:139]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:30:50,268 INFO [test_manufacturer.py:140]  xml_attr_root %s
+2018-04-11 10:32:14,417 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:32:14,525 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:32:14,576 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:32:14,604 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:32:14,604 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:32:14,616 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:32:14,657 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:32:14,659 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:32:14,661 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:32:14,662 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:32:14,664 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:32:14,665 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:32:14,665 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:32:14,679 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:32:14,679 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:32:14,680 INFO [test_manufacturer.py:138]  mysql_total_attrroot 16
+2018-04-11 10:32:14,680 INFO [test_manufacturer.py:139]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:32:14,680 INFO [test_manufacturer.py:140]  xml_attr_root %s
+2018-04-11 10:33:11,278 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:33:11,408 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:33:11,538 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:33:11,644 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:33:11,644 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and CLASS_LEVEL='1' and 1=1
+2018-04-11 10:33:11,647 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:33:11,650 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:33:11,651 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:33:11,653 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and CLASS_LEVEL='1' and 1=1
+2018-04-11 10:33:11,655 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:33:11,656 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:33:11,657 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:33:11,658 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:33:11,673 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:33:11,673 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:33:11,674 INFO [test_manufacturer.py:138]  mysql_total_attrroot 16
+2018-04-11 10:33:11,674 INFO [test_manufacturer.py:139]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:33:11,674 INFO [test_manufacturer.py:140]  xml_attr_root %s
+2018-04-11 10:33:36,189 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:33:36,335 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:33:36,337 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:33:36,362 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:33:36,362 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:33:36,364 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:33:36,366 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:33:36,367 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:33:36,369 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:33:36,371 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:33:36,372 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:33:36,373 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:33:36,374 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:33:36,400 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:33:36,401 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:33:36,401 INFO [test_manufacturer.py:138]  mysql_total_attrroot 16
+2018-04-11 10:33:36,401 INFO [test_manufacturer.py:139]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:33:36,401 INFO [test_manufacturer.py:140]  xml_attr_root ['11432', '11504', '11512', '11520', '11696', '11704', '11774', '11782', '11798', '100572', '100580', '100796', '100820', '100868', '100900', '101023']
+2018-04-11 10:35:10,621 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:35:10,738 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:35:10,740 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:35:10,742 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:35:10,742 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:35:10,744 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:35:10,747 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:35:10,749 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:35:10,751 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='1' and CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and 1=1
+2018-04-11 10:35:10,753 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:35:10,755 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:35:10,756 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:35:10,757 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:35:10,780 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:35:10,780 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:35:10,780 INFO [test_manufacturer.py:139]  mysql_total_attrroot 16
+2018-04-11 10:35:10,780 INFO [test_manufacturer.py:140]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:35:10,780 INFO [test_manufacturer.py:141]  xml_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:35:10,781 INFO [parse_xml.py:104]  匹配正则: <Attribchildnode>(.*?)</Attribchildnode>
+2018-04-11 10:35:10,781 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.PARENT_ID</PN><PV>11432</PV><SRT>7</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_class2class</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID</ResultFields></SqlQuery>']
+2018-04-11 10:35:10,818 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:35:10,819 INFO [parse_xml.py:60]  parse xml get total:9
+2018-04-11 10:35:10,819 INFO [test_manufacturer.py:155]  mysql total 9
+2018-04-11 10:35:10,819 INFO [test_manufacturer.py:156]  mysql_id 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:35:10,819 INFO [test_manufacturer.py:157]  xml_id 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:35:10,820 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:35:10,823 INFO [parse_xml.py:104]  匹配正则: <Attriblevle1>(.*?)</Attriblevle1>
+2018-04-11 10:35:10,825 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_ID</PN><PV>11433,11434,11435,11436,11437,11438,11439,100105,100114</PV><SRT>7</SRT><SPT>0</SPT></SC><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>1</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:35:10,851 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:35:10,851 INFO [parse_xml.py:60]  parse xml get total:2
+2018-04-11 10:35:10,851 INFO [test_manufacturer.py:172]  mysql total 2
+2018-04-11 10:35:10,852 INFO [test_manufacturer.py:173]  mysql_attr_list [100105, 100114]
+2018-04-11 10:35:10,852 INFO [test_manufacturer.py:174]  xml_attr_list [100105, 100114]
+2018-04-11 10:35:10,852 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:35:10,853 INFO [parse_xml.py:104]  匹配正则: <Manuname>(.*?)</Manuname>
+2018-04-11 10:35:10,854 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions /><KeyId>M.MAN_ID</KeyId><QueryTable><TableName>bmp_manufacturers</TableName><AliasName>M</AliasName></QueryTable><ResultFields>DISTINCT M.MAN_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:35:10,887 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:35:10,888 INFO [parse_xml.py:60]  parse xml get total:50
+2018-04-11 10:35:10,888 INFO [test_manufacturer.py:188]  mysql_manuname_total 50
+2018-04-11 10:35:10,888 INFO [test_manufacturer.py:189]  mysql_manuname ['腾博', '数码视讯', '戴尔', '安信华', '天融信', '网神', '启明星辰', '绿盟', '联想', '微软', 'IBM', '中兴', 'H3C', 'test']
+2018-04-11 10:35:10,888 INFO [test_manufacturer.py:190]  xml_manuname ['腾博', '数码视讯', '戴尔', '安信华', '天融信', '网神', '启明星辰', '绿盟', '联想', '微软', 'IBM', '中兴', 'H3C', 'test']
+2018-04-11 10:36:28,623 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 10:36:28,735 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:36:28,757 INFO [dataConnect.py:78]  select CLASS_ID from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:36:28,768 INFO [test_manufacturer.py:117]  上一查询结果 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:36:28,768 INFO [dataConnect.py:78]  select CLASS_ID from bmp_attribclass where CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and CLASS_LEVEL='1' and 1=1
+2018-04-11 10:36:28,780 INFO [dataConnect.py:78]  select DISTINCT MAN_NAME from bmp_manufacturers where 1=1
+2018-04-11 10:36:28,789 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_LEVEL='0' and 1=1
+2018-04-11 10:36:28,790 INFO [dataConnect.py:78]  select count(1) from bmp_class2class where parent_id='11432' and 1=1
+2018-04-11 10:36:28,792 INFO [dataConnect.py:78]  select count(1) from bmp_attribclass where CLASS_ID in (11433,11434,11435,11436,11437,11438,11439,100105,100114) and CLASS_LEVEL='1' and 1=1
+2018-04-11 10:36:28,804 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 10:36:28,804 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\bmpObjQuery.xml
+2018-04-11 10:36:28,805 INFO [parse_xml.py:104]  匹配正则: <Attribroot>(.*?)</Attribroot>
+2018-04-11 10:36:28,806 INFO [parse_xml.py:47]  获取参数：['<!--取所有一级attribute，level=0--><SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>0</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:36:28,820 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:36:28,821 INFO [parse_xml.py:60]  parse xml get total:16
+2018-04-11 10:36:28,821 INFO [test_manufacturer.py:139]  mysql_total_attrroot 16
+2018-04-11 10:36:28,821 INFO [test_manufacturer.py:140]  mysql_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:36:28,821 INFO [test_manufacturer.py:141]  xml_attr_root [11432, 11504, 11512, 11520, 11696, 11704, 11774, 11782, 11798, 100572, 100580, 100796, 100820, 100868, 100900, 101023]
+2018-04-11 10:36:28,821 INFO [parse_xml.py:104]  匹配正则: <Attribchildnode>(.*?)</Attribchildnode>
+2018-04-11 10:36:28,822 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.PARENT_ID</PN><PV>11432</PV><SRT>7</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_class2class</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID</ResultFields></SqlQuery>']
+2018-04-11 10:36:28,836 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:36:28,836 INFO [parse_xml.py:60]  parse xml get total:9
+2018-04-11 10:36:28,836 INFO [test_manufacturer.py:154]  mysql total 9
+2018-04-11 10:36:28,836 INFO [test_manufacturer.py:155]  mysql_id 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:36:28,836 INFO [test_manufacturer.py:156]  xml_id 11433,11434,11435,11436,11437,11438,11439,100105,100114
+2018-04-11 10:36:28,836 INFO [parse_xml.py:104]  匹配正则: <Attriblevle1>(.*?)</Attriblevle1>
+2018-04-11 10:36:28,836 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions><SC><SLT>0</SLT><PN>A.CLASS_ID</PN><PV>11433,11434,11435,11436,11437,11438,11439,100105,100114</PV><SRT>7</SRT><SPT>0</SPT></SC><SC><SLT>0</SLT><PN>A.CLASS_LEVEL</PN><PV>1</PV><SRT>0</SRT><SPT>0</SPT></SC></Conditions><KeyId>A.CLASS_ID</KeyId><QueryTable><TableName>bmp_attribclass</TableName><AliasName>A</AliasName></QueryTable><ResultFields>A.CLASS_ID,A.CLASS_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:36:28,867 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:36:28,868 INFO [parse_xml.py:60]  parse xml get total:2
+2018-04-11 10:36:28,868 INFO [test_manufacturer.py:170]  mysql total 2
+2018-04-11 10:36:28,868 INFO [test_manufacturer.py:171]  mysql_attr_list [100105, 100114]
+2018-04-11 10:36:28,868 INFO [test_manufacturer.py:172]  xml_attr_list [100105, 100114]
+2018-04-11 10:36:28,868 INFO [parse_xml.py:104]  匹配正则: <Manuname>(.*?)</Manuname>
+2018-04-11 10:36:28,868 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><Conditions /><KeyId>M.MAN_ID</KeyId><QueryTable><TableName>bmp_manufacturers</TableName><AliasName>M</AliasName></QueryTable><ResultFields>DISTINCT M.MAN_NAME</ResultFields></SqlQuery>']
+2018-04-11 10:36:28,890 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 10:36:28,890 INFO [parse_xml.py:60]  parse xml get total:50
+2018-04-11 10:36:28,890 INFO [test_manufacturer.py:185]  mysql_manuname_total 50
+2018-04-11 10:36:28,890 INFO [test_manufacturer.py:186]  mysql_manuname ['腾博', '数码视讯', '戴尔', '安信华', '天融信', '网神', '启明星辰', '绿盟', '联想', '微软', 'IBM', '中兴', 'H3C', 'test']
+2018-04-11 10:36:28,890 INFO [test_manufacturer.py:187]  xml_manuname ['腾博', '数码视讯', '戴尔', '安信华', '天融信', '网神', '启明星辰', '绿盟', '联想', '微软', 'IBM', '中兴', 'H3C', 'test']
+2018-04-11 15:52:53,556 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 15:54:04,132 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 15:54:04,261 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 15:54:04,262 INFO [parse_xml.py:104]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 15:54:04,262 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS> >']
+2018-04-11 15:59:00,168 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 15:59:00,296 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 15:59:00,297 INFO [parse_xml.py:105]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 15:59:00,297 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS> >']
+2018-04-11 15:59:16,211 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 16:00:35,131 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 16:00:35,259 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:00:35,259 INFO [parse_xml.py:105]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 16:00:35,260 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS> >']
+2018-04-11 16:00:35,260 INFO [test_manufacturer.py:199]  最终参数： {'tableName': 'BMP_MANUFACTURERS', 'objXml': ['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS> >']}
+2018-04-11 16:00:35,304 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 16:01:21,546 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 16:01:21,682 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:01:21,683 INFO [parse_xml.py:105]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 16:01:21,683 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>']
+2018-04-11 16:01:21,683 INFO [test_manufacturer.py:199]  最终参数： {'objXml': ['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>'], 'tableName': 'BMP_MANUFACTURERS'}
+2018-04-11 16:01:21,728 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 16:02:30,030 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 16:02:30,144 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:02:30,145 INFO [parse_xml.py:105]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 16:02:30,145 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>']
+2018-04-11 16:02:30,145 INFO [test_manufacturer.py:199]  最终参数： {'tableName': 'BMP_MANUFACTURERS', 'objXml': ['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>']}
+2018-04-11 16:02:30,180 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 16:02:52,806 INFO [test_manufacturer.py:23]  start test manufacturer
+2018-04-11 16:02:52,959 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:02:52,959 INFO [parse_xml.py:105]  匹配正则: <InsertManu>(.*?)</InsertManu>
+2018-04-11 16:02:52,960 INFO [parse_xml.py:47]  获取参数：['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>']
+2018-04-11 16:02:52,960 INFO [test_manufacturer.py:199]  最终参数： {'tableName': 'BMP_MANUFACTURERS', 'objXml': ['<BMP_MANUFACTURERS><MAN_NAME>测试添加test_add</MAN_NAME><MAN_DESC>测试添加test_add描述</MAN_DESC></BMP_MANUFACTURERS>']}
+2018-04-11 16:02:53,032 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 16:41:37,608 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:41:37,611 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:41:37,612 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:41:37,639 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:19,954 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 16:49:29,141 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 16:49:29,226 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:49:29,283 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 16:49:29,285 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 16:49:29,287 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:49:29,289 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:49:29,290 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:49:29,313 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:29,314 INFO [test_manufacturer.py:57]  测试第 1 页
+2018-04-11 16:49:29,314 INFO [test_manufacturer.py:58]  id_xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:49:29,314 INFO [test_manufacturer.py:59]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:49:29,314 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 16:49:29,316 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:49:29,319 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:49:29,319 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:49:29,333 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:29,334 INFO [test_manufacturer.py:57]  测试第 2 页
+2018-04-11 16:49:29,334 INFO [test_manufacturer.py:58]  id_xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:49:29,334 INFO [test_manufacturer.py:59]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:49:29,334 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 16:49:29,336 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:49:29,340 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:49:29,340 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:49:29,355 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:29,356 INFO [test_manufacturer.py:57]  测试第 3 页
+2018-04-11 16:49:29,357 INFO [test_manufacturer.py:58]  id_xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:49:29,357 INFO [test_manufacturer.py:59]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:49:29,357 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 16:49:29,358 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:49:29,362 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:49:29,362 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:49:29,375 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:29,376 INFO [test_manufacturer.py:57]  测试第 4 页
+2018-04-11 16:49:29,376 INFO [test_manufacturer.py:58]  id_xml_list: [271, 272, 273, 274, 275]
+2018-04-11 16:49:29,376 INFO [test_manufacturer.py:59]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 16:49:29,377 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:49:29,377 INFO [test_manufacturer.py:64]  mysql result is 65
+2018-04-11 16:49:29,377 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 16:50:33,283 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 16:50:33,380 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:50:33,409 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 16:50:33,410 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 16:50:33,413 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:50:33,416 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:50:33,416 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:50:33,430 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:50:33,430 INFO [queryPage.py:30]  测试第 1 页
+2018-04-11 16:50:33,430 INFO [queryPage.py:31]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:50:33,430 INFO [test_manufacturer.py:57]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:50:33,430 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 16:50:33,432 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:50:33,434 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:50:33,435 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:50:33,448 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:50:33,449 INFO [queryPage.py:30]  测试第 2 页
+2018-04-11 16:50:33,449 INFO [queryPage.py:31]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:50:33,449 INFO [test_manufacturer.py:57]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:50:33,449 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 16:50:33,451 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:50:33,453 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:50:33,454 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:50:33,466 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:50:33,466 INFO [queryPage.py:30]  测试第 3 页
+2018-04-11 16:50:33,466 INFO [queryPage.py:31]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:50:33,467 INFO [test_manufacturer.py:57]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:50:33,467 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 16:50:33,468 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:50:33,471 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:50:33,471 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:50:33,484 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:50:33,484 INFO [queryPage.py:30]  测试第 4 页
+2018-04-11 16:50:33,484 INFO [queryPage.py:31]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 16:50:33,484 INFO [test_manufacturer.py:57]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 16:50:33,484 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:50:33,484 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 16:50:33,485 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 16:53:37,080 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 16:53:37,239 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:53:37,268 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 16:53:37,274 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:53:37,274 INFO [test_manufacturer.py:50]  mysql result is 65
+2018-04-11 16:53:37,274 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 16:53:37,275 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 16:53:37,285 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:53:37,287 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:53:37,288 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:53:37,304 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:53:37,305 INFO [queryPage.py:30]  测试第 1 页
+2018-04-11 16:53:37,305 INFO [queryPage.py:31]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:53:37,305 INFO [test_manufacturer.py:62]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 16:53:37,305 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 16:53:37,307 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:53:37,311 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:53:37,311 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:53:37,325 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:53:37,325 INFO [queryPage.py:30]  测试第 2 页
+2018-04-11 16:53:37,325 INFO [queryPage.py:31]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:53:37,326 INFO [test_manufacturer.py:62]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 16:53:37,326 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 16:53:37,328 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:53:37,331 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:53:37,331 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:53:37,345 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:53:37,346 INFO [queryPage.py:30]  测试第 3 页
+2018-04-11 16:53:37,346 INFO [queryPage.py:31]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:53:37,346 INFO [test_manufacturer.py:62]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 16:53:37,346 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 16:53:37,348 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:53:37,351 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:53:37,352 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:53:37,375 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:53:37,376 INFO [queryPage.py:30]  测试第 4 页
+2018-04-11 16:53:37,376 INFO [queryPage.py:31]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 16:53:37,376 INFO [test_manufacturer.py:62]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 16:57:31,490 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 16:57:31,493 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 16:57:31,493 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 16:57:31,517 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 16:57:31,518 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 16:57:31,518 INFO [queryPage.py:31]  测试第 1 页
+2018-04-11 16:57:31,518 INFO [queryPage.py:32]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:01:42,954 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:01:43,147 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:01:43,197 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:01:43,199 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:01:43,201 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:01:43,204 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:01:43,205 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:01:43,220 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:01:43,221 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:01:43,221 INFO [queryPage.py:31]  测试第 1 页
+2018-04-11 17:01:43,221 INFO [queryPage.py:32]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:01:43,221 INFO [test_manufacturer.py:57]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:01:43,221 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:01:43,223 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:01:43,226 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:01:43,227 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:01:43,243 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:01:43,244 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:01:43,244 INFO [queryPage.py:31]  测试第 2 页
+2018-04-11 17:01:43,244 INFO [queryPage.py:32]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:01:43,244 INFO [test_manufacturer.py:57]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:01:43,245 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:01:43,246 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:01:43,249 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:01:43,249 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:01:43,284 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:01:43,284 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:01:43,284 INFO [queryPage.py:31]  测试第 3 页
+2018-04-11 17:01:43,284 INFO [queryPage.py:32]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:01:43,284 INFO [test_manufacturer.py:57]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:01:43,285 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:01:43,286 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:01:43,288 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:01:43,288 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:01:43,303 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:01:43,303 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:01:43,303 INFO [queryPage.py:31]  测试第 4 页
+2018-04-11 17:01:43,303 INFO [queryPage.py:32]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:01:43,304 INFO [test_manufacturer.py:57]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:01:43,304 INFO [test_manufacturer.py:61]  mysql result is 65
+2018-04-11 17:02:19,599 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:02:19,696 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:02:19,724 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1
+2018-04-11 17:02:19,746 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where MAN_NAME='测试添加test_add' and 1=1 limit 0,20
+2018-04-11 17:02:19,748 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:02:19,751 INFO [parse_xml.py:105]  匹配正则: <Exact>(.*?)</Exact>
+2018-04-11 17:02:19,751 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>1</RowCount><PageCount>1</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions><SC><SLT>0</SLT><PN>MAN_NAME</PN><PV>测试添加test_add</PV><SRT>17</SRT><SPT>0</SPT></SC></Conditions></SqlQuery>']
+2018-04-11 17:02:19,775 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:02:19,775 INFO [parse_xml.py:60]  parse xml get total:4
+2018-04-11 17:02:19,775 INFO [queryPage.py:31]  测试第 1 页
+2018-04-11 17:02:19,776 INFO [queryPage.py:32]  xml_list: [271, 273, 274, 275]
+2018-04-11 17:02:19,776 INFO [test_manufacturer.py:81]  mysql result is 4
+2018-04-11 17:12:46,196 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:12:46,341 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:12:46,374 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:12:46,376 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:12:46,378 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:12:46,381 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:12:46,382 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:12:46,397 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:12:46,398 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:12:46,398 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:12:46,398 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:12:46,398 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:12:46,398 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:12:46,400 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:12:46,403 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:12:46,403 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:12:46,427 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:12:46,427 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:12:46,427 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:12:46,427 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:12:46,427 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:12:46,427 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:12:46,429 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:12:46,432 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:12:46,432 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:12:46,455 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:12:46,456 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:12:46,456 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:12:46,456 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:12:46,456 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:12:46,457 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:12:46,460 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:12:46,462 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:12:46,463 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:12:46,483 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:12:46,483 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:12:46,483 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:12:46,484 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:12:46,484 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:12:46,484 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 17:13:29,314 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:13:29,448 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:13:29,476 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:13:29,478 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:13:29,480 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:13:29,483 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:13:29,484 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:13:29,507 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:13:29,508 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:13:29,508 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:13:29,508 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:13:29,508 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:13:29,508 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:13:29,511 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:13:29,513 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:13:29,513 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:13:29,536 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:13:29,537 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:13:29,537 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:13:29,537 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:13:29,537 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:13:29,537 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:13:29,540 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:13:29,542 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:13:29,543 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:13:29,557 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:13:29,557 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:13:29,558 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:13:29,558 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:13:29,558 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:13:29,558 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:13:29,561 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:13:29,564 INFO [parse_xml.py:105]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:13:29,564 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:13:29,578 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:13:29,579 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:13:29,579 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:13:29,579 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:13:29,579 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:13:29,579 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 17:20:57,335 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:20:57,467 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:20:57,496 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:20:57,516 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:20:57,518 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:20:57,520 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:20:57,521 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:20:57,535 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:20:57,536 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:20:57,536 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:20:57,536 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:20:57,536 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:20:57,536 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:20:57,538 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:20:57,541 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:20:57,541 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:20:57,562 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:20:57,563 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:20:57,563 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:20:57,563 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:20:57,563 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:20:57,563 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:20:57,565 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:20:57,567 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:20:57,568 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:20:57,581 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:20:57,581 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:20:57,581 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:20:57,582 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:20:57,582 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:20:57,582 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:20:57,583 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:20:57,585 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:20:57,586 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:20:57,608 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:20:57,609 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:20:57,609 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:20:57,609 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:20:57,609 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:20:57,609 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 17:21:20,416 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:21:20,504 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:21:20,532 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:21:20,534 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:21:20,536 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:21:20,539 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:21:20,539 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:21:20,562 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:21:20,563 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:21:20,563 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:21:20,563 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:21:20,563 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:21:20,563 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:21:20,565 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:21:20,567 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:21:20,568 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:21:20,590 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:21:20,591 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:21:20,591 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:21:20,591 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:21:20,591 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:21:20,591 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:21:20,593 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:21:20,595 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:21:20,596 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:21:20,620 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:21:20,621 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:21:20,621 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:21:20,621 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:21:20,621 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:21:20,621 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:21:20,623 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:21:20,625 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:21:20,625 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:21:20,637 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:21:20,637 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:21:20,637 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:21:20,637 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:21:20,638 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:21:20,638 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 17:22:15,006 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:22:15,139 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:22:15,167 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:22:15,169 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:22:15,171 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,537 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:46:53,652 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,681 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:46:53,683 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:46:53,685 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,687 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:46:53,688 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:46:53,711 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:46:53,712 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:46:53,712 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:46:53,712 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:46:53,712 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:46:53,712 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:46:53,714 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,717 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:46:53,717 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:46:53,740 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:46:53,740 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:46:53,740 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:46:53,740 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:46:53,740 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:46:53,740 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:46:53,742 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,744 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:46:53,745 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:46:53,768 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:46:53,768 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:46:53,769 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:46:53,769 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:46:53,769 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:46:53,769 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:46:53,771 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:46:53,774 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:46:53,774 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:46:53,803 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:46:53,804 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:46:53,804 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:46:53,804 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:46:53,804 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:46:53,804 INFO [test_manufacturer.py:62]  mysql result is 65
+2018-04-11 17:47:17,365 INFO [test_manufacturer.py:24]  start test manufacturer
+2018-04-11 17:47:17,491 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:47:17,520 INFO [dataConnect.py:78]  select count(1) from bmp_manufacturers where 1=1
+2018-04-11 17:47:17,521 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 0,20
+2018-04-11 17:47:17,523 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:47:17,526 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:47:17,527 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>1</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:47:17,548 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:47:17,549 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:47:17,549 INFO [queryPage.py:39]  测试第 1 页
+2018-04-11 17:47:17,549 INFO [queryPage.py:40]  xml_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:47:17,549 INFO [test_manufacturer.py:58]  id_database_list: [5, 6, 7, 20, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38]
+2018-04-11 17:47:17,549 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 20,20
+2018-04-11 17:47:17,551 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:47:17,554 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:47:17,555 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>2</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:47:17,569 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:47:17,570 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:47:17,570 INFO [queryPage.py:39]  测试第 2 页
+2018-04-11 17:47:17,570 INFO [queryPage.py:40]  xml_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:47:17,570 INFO [test_manufacturer.py:58]  id_database_list: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 173, 175, 176, 177, 178, 179, 180, 181, 182]
+2018-04-11 17:47:17,570 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 40,20
+2018-04-11 17:47:17,572 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:47:17,574 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:47:17,575 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>3</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:47:17,588 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:47:17,589 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:47:17,589 INFO [queryPage.py:39]  测试第 3 页
+2018-04-11 17:47:17,589 INFO [queryPage.py:40]  xml_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:47:17,589 INFO [test_manufacturer.py:58]  id_database_list: [183, 245, 246, 247, 250, 251, 252, 253, 254, 258, 259, 260, 263, 264, 265, 266, 267, 268, 269, 270]
+2018-04-11 17:47:17,589 INFO [dataConnect.py:78]  select MAN_ID from bmp_manufacturers where 1=1 limit 60,20
+2018-04-11 17:47:17,591 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\Manufacturers.xml
+2018-04-11 17:47:17,593 INFO [parse_xml.py:106]  匹配正则: <Manufacturer>(.*?)</Manufacturer>
+2018-04-11 17:47:17,594 INFO [parse_xml.py:47]  获取参数：['<SqlQuery><IsPageResult>1</IsPageResult><PageInfo><PageSize>20</PageSize><CurrentPage>4</CurrentPage><RowCount>0</RowCount><PageCount>0</PageCount><OrderBy /></PageInfo><QueryTable><TableName>BMP_MANUFACTURERS</TableName><AliasName /></QueryTable><OrderString /><Conditions /></SqlQuery>']
+2018-04-11 17:47:17,606 INFO [parse_xml.py:22]  解析参数文件: F:\study\interface\data\result.xml
+2018-04-11 17:47:17,606 INFO [parse_xml.py:60]  parse xml get total:65
+2018-04-11 17:47:17,607 INFO [queryPage.py:39]  测试第 4 页
+2018-04-11 17:47:17,607 INFO [queryPage.py:40]  xml_list: [271, 272, 273, 274, 275]
+2018-04-11 17:47:17,607 INFO [test_manufacturer.py:58]  id_database_list: [271, 272, 273, 274, 275]
+2018-04-11 17:47:17,607 INFO [test_manufacturer.py:62]  mysql result is 65
