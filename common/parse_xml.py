@@ -84,15 +84,17 @@ class Parse:
 		full_node = node + '/SqlQuery/PageInfo/CurrentPage'
 		for elem in self._tree.iterfind(full_node):
 			elem.text = str(page)
-		self._tree.write(self._file, encoding='UTF-8', xml_declaration=True)
+		with open(self._file, 'wb') as f:
+			self._tree.write(f, encoding='UTF-8', xml_declaration=True)
 
-	def get_case_param(self, total=0, change=0, page=1, tag=''):
+	def get_case_param(self, total=0, change=0, page=1, tag='', para='queryInfo'):
 		u"""
 		封装xml各方法，实现参数、标签值的获取和xml的改变
 		:param total: 是否计算total，一般与result.xml合用，1是获取，0不获取，默认为不获取
 		:param change: 是否改变xml，一般与非结果xml合用，1为改变，默认为0不改变，改变显示页数
 		:param page: 为当前页数current，page为改变值
 		:param tag: 标签名称，例如'Record/MAN_ID'，'Manufacturer'
+		:param para: 拼凑xml参数时，key的值，默认为queryInfo
 		:return: 返回取值结果，接口参数param，total值 re，
 		"""
 		if self._name != 'result.xml' and change == 0:
@@ -103,7 +105,7 @@ class Parse:
 					if tag in pat:
 						logging.info(u'匹配正则: %s' % pat)
 						param = self._get_parm(pat)
-				parm = {'queryInfo': param}
+				parm = {para: param}
 				return parm
 			except UnboundLocalError as msg:
 				logging.error(u'没有匹配到正则，获取参数失败。error：%' % msg)
