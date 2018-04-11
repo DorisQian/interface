@@ -35,8 +35,11 @@ class Query:
 
 		rs_xml = Parse(self._result)
 		xml_list = rs_xml.get_case_param(tag=resulttag)
-		if xml_list[0].isdigit():
-			xml_list = [int(id) for id in xml_list]
+		if len(xml_list):
+			if xml_list[0].isdigit():
+				xml_list = [int(id) for id in xml_list]
+		else:
+			xml_list = ()
 		total = rs_xml.get_case_param(total=1)
 		if page:
 			logging.info(u'测试第 %d 页' % page)
