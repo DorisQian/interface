@@ -1,15 +1,16 @@
 # !/usr/bin/env python3
 # -*- coding = utf-8 -*-
 
-from common.Logger import Logger
+from common.Logger import log
 from common.parse_xml import Parse
 from suds.client import Client
 from data import configure
-import logging
+import os
 
 
 class Query:
 	def __init__(self):
+		self.logging = log(os.path.basename(__file__))
 		self._url = configure.conf['url']
 		self._client = Client(self._url)
 		self._file = configure.conf['result_file']
@@ -35,20 +36,24 @@ class Query:
 
 		rs_xml = Parse(self._result)
 		xml_list = rs_xml.get_case_param(tag=resulttag)
-		if len(xml_list):
+		if len(xml_list) > 1:
 			if xml_list[0].isdigit():
 				xml_list = [int(id) for id in xml_list]
+		elif len(xml_list) == 1:
+			if xml_list[0].isdigit():
+				xml_list = int(xml_list[0])
+			else:
+				xml_list = xml_list[0]
 		else:
 			xml_list = ()
 		total = rs_xml.get_case_param(total=1)
 		if page:
-			logging.info(u'测试第 %d 页' % page)
+			self.logging.info(u'测试第 %d 页' % page)
 		# logging.info('xml_list: %s' % xml_list)
 		return xml_list, total
 
 
 if __name__ == '__main__':
-	logger = Logger()
-	p = QueryPage()
+	p = Query()
 	re = p.get_page_result('Manufacturers.xml', 1, origintag='Manufacturer', resulttag='Record/MAN_ID')
 	print(re)
