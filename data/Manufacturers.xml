@@ -49,7 +49,7 @@
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>2</CurrentPage>
+        <CurrentPage>1</CurrentPage>
         <RowCount>1</RowCount>
         <PageCount>1</PageCount>
         <OrderBy />
@@ -173,6 +173,53 @@
     <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
 </SqlQuery>
 </Manuname> 取得所有去重厂商名称
+<IsModel>
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>123</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+        <SC>
+            <SLT>0</SLT>
+            <PN>FIELD_1</PN>
+            <PV></PV>
+            <SRT>14</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId></KeyId>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>MAN_DESC</ResultFields>
+</SqlQuery>
+
+</IsModel> 查询厂商下是否有型号，判断下一个方法
+<IdandDesc>
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>123</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId></KeyId>
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>MAN_ID,MAN_DESC</ResultFields>
+</SqlQuery>
+
+</IdandDesc>查询ID，用以update传参
 
 <InsertManu>
 <BMP_MANUFACTURERS>
@@ -191,4 +238,23 @@
     <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
 </SqlQuery>
 </QueryAdded> 增加后查询所有厂商名称
+
+<InsertModel>
+<BMP_MANUFACTURERS>
+    <MAN_NAME>测试添加test_add</MAN_NAME>
+    <CLASS_ID>100105</CLASS_ID>
+    <FIELD_1>型号</FIELD_1>
+    <MAN_DESC>测试添加test_add描述</MAN_DESC>
+</BMP_MANUFACTURERS>
+</InsertModel>增加型号
+<UpdateModel>
+<BMP_MANUFACTURERS>
+    <MAN_NAME>厂商</MAN_NAME>
+    <CLASS_ID>100105</CLASS_ID>
+    <FIELD_1>型号</FIELD_1>
+    <MAN_DESC>描述</MAN_DESC>
+    <MAN_ID>286</MAN_ID>
+</BMP_MANUFACTURERS>
+</UpdateModel> 增加型号，更新记录
+
 </node>
