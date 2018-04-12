@@ -1,7 +1,7 @@
 # !/usr/bin/env python3
 # -*- coding = utf-8 -*-
 
-from common.Logger import Logger
+from common.Logger import log
 from common.parse_xml import Parse
 from common.dataConnect import Database
 from common.query import Query
@@ -9,7 +9,6 @@ from data import configure
 from suds.client import Client
 from math import ceil
 import unittest
-import logging
 
 
 class Manufacturer(unittest.TestCase):
@@ -17,8 +16,8 @@ class Manufacturer(unittest.TestCase):
 
 	@classmethod
 	def setUpClass(cls):
-		logging.info("start test manufacturer")
-		cls.logger = Logger()
+		cls.logging = log('test')
+		cls.logging.info("start test manufacturer")
 		cls.data = Database()
 		cls.url = configure.conf['url']
 		cls.result = configure.conf['result']
@@ -45,11 +44,11 @@ class Manufacturer(unittest.TestCase):
 				id_database_list = self.data.select(self.tablename, self.field_manid,
 													limit='%d,%d' % (current * 20 - 20, 20))
 				id_xml_list, total = self.query.get_query_result(self.origin, current, 'Manufacturer', 'Record/MAN_ID')
-				logging.info('id_database_list: %s' % id_database_list)
+				self.logging.info('id_database_list: %s' % id_database_list)
 				self.assertEqual(id_database_list, id_xml_list)
 
 			# 断言总记录数
-			logging.info('mysql result is %s' % records)
+			self.logging.info('mysql result is %s' % records)
 			self.assertEqual(records, int(total))
 		else:
 			id_xml_list, total = self.query.get_query_result(self.origin, page, 'Manufacturer', 'Record/MAN_ID')
@@ -69,10 +68,10 @@ class Manufacturer(unittest.TestCase):
 				self.assertEqual(id_database_list, id_xml_list)
 
 			# 断言总记录数
-			logging.info('mysql result is %s' % records)
+			self.logging.info('mysql result is %s' % records)
 			self.assertEqual(records, int(total))
 		except UnboundLocalError:
-			logging.warning('查询结果为空，测试中断')
+			self.logging.warning('查询结果为空，测试中断')
 
 	def test_query_fuzzy(self):
 		u"""测试测试厂商按条件模糊查询"""
@@ -87,10 +86,10 @@ class Manufacturer(unittest.TestCase):
 				self.assertEqual(id_database_list, id_xml_list)
 
 			# 断言总记录数
-			logging.info('mysql result is %s' % records)
+			self.logging.info('mysql result is %s' % records)
 			self.assertEqual(records, int(total))
 		except UnboundLocalError:
-			logging.warning('查询结果为空，测试中断')
+			self.logging.warning('查询结果为空，测试中断')
 
 	def test_query_null(self):
 		u"""测试查询结果为空"""
@@ -155,16 +154,16 @@ class Manufacturer(unittest.TestCase):
 
 	def test_add_manu(self):
 		u"""测试成功添加厂商"""
-		# 添加后调用查询，查询最后一页数据，以及所有厂商名称
+		''' 添加后调用查询，查询最后一页数据，以及所有厂商名称'''
 		# insert
 		param = self.para_xml.get_case_param(tag='InsertManu', para='objXml')
 		param['tableName'] = 'BMP_MANUFACTURERS'
-		logging.info('最终参数： %s' % param)
+		self.logging.info('最终参数： %s' % param)
 		response = self.client.service.bmpObjInsert(**param)
 		new_manid = self.data.select(self.tablename, self.field_manid, self.query_exact)
 		new_manid = [str(id) for id in new_manid]
-		logging.info('mysql data new_manid is %s' % new_manid)
-		logging.info('response manid is %s' % response['resultVal'])
+		self.logging.info('mysql data new_manid is %s' % new_manid)
+		self.logging.info('response manid is %s' % response['resultVal'])
 		self.assertEqual(response['errorCode'], 0)
 		self.assertEqual(response['errorString'], None)
 		self.assertIn(response['resultVal'], new_manid)
@@ -185,7 +184,12 @@ class Manufacturer(unittest.TestCase):
 		self.assertEqual(name_database_list, name_xml_list)
 		self.assertEqual(records, int(total))
 
+	def test_add_model(self):
+		u"""测试成功添加型号"""
+		'''先查看厂商下型号不为空的记录，如果为0，即全部有型号，则调用insert，若为1，取manid，作为update参数，添加后显示最后一页'''
+
 	@classmethod
 	def tearDownClass(cls):
+
 		cls.data.close()
 

@@ -3,7 +3,7 @@
 
 import os
 import re
-import logging
+from common.dataConnect import Database
 from xml.etree.ElementTree import ElementTree
 
 
@@ -16,10 +16,11 @@ class Parse:
 		u"""
 		:param name:xml具体文件,以data为根目录
 		"""
+		self._log = Database.logging
 		self._name = name
 		self._path = os.getcwd().split('interface')[0] + 'interface' + os.sep + 'data' + os.sep
 		self._file = self._path + self._name
-		logging.info(u'解析参数文件: %s' % self._file)
+		self._log.info(u'解析参数文件: %s' % self._file)
 		self._tree = ElementTree(file=self._file)
 
 	def _parse_xml(self):
@@ -44,10 +45,10 @@ class Parse:
 			with open(self._file, 'r', encoding='utf8') as f:
 				content = ''.join([i.strip() for i in f.readlines()])
 			matches = re.findall(pattern, content)
-			logging.info(u'获取参数：%s' % matches)
+			self._log.info(u'获取参数：%s' % matches)
 			return matches
 		except FileNotFoundError as msg:
-			logging.error(msg)
+			self._log.error(msg)
 
 	def _get_total(self):
 		u"""
@@ -57,10 +58,10 @@ class Parse:
 		for elem in self._tree.iterfind('Record1/TotalCount'):
 			total = elem.text
 		try:
-			logging.info('parse xml get total:%s' % total)
+			self._log.info('parse xml get total:%s' % total)
 			return total
 		except UnboundLocalError as msg:
-			logging.error('there\'re no total node. The error message:%s' % msg)
+			self._log.error('there\'re no total node. The error message:%s' % msg)
 
 	def _get_tag_value(self, node):
 		u"""
@@ -103,12 +104,12 @@ class Parse:
 			try:
 				for pat in pattern:
 					if tag in pat:
-						logging.info(u'匹配正则: %s' % pat)
+						self._log.info(u'匹配正则: %s' % pat)
 						param = self._get_parm(pat)
 				parm = {para: param}
 				return parm
 			except UnboundLocalError as msg:
-				logging.error(u'没有匹配到正则，获取参数失败。error：%' % msg)
+				self._log.error(u'没有匹配到正则，获取参数失败。error：%' % msg)
 
 		elif self._name != 'result.xml' and change == 1:
 			self._set_current_page(tag, page)
@@ -122,7 +123,5 @@ class Parse:
 
 
 if __name__ == '__main__':
-	from common.Logger import Logger
-	logger = Logger()
 	a = Parse(name='bmpObjQuery.xml')
 
