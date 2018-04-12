@@ -2,18 +2,28 @@
 # -*- coding = utf-8 -*-
 
 from data import configure
+from common.Logger import log
 import pymysql
-import logging
+import sys
+import os
 
 
 class Database:
 	u"""
 	数据库连接与操作
 	"""
+
+	logging = log(os.path.basename(__file__))  # 供主要多次实例化的类使用，传递，容易parse_xml
+
 	def __init__(self):
 		conf = configure.conf['db']
-		self._con = pymysql.connect(**conf)
-		self._cursor = self._con.cursor()
+		try:
+			self._con = pymysql.connect(**conf)
+			self._cursor = self._con.cursor()
+		except pymysql.Error as msg:
+			self.logging.error(msg)
+			self.logging.warning('数据库连接失败，程序终止运行！')
+			sys.exit()
 
 	def _execute(self, sql=''):
 		u"""
@@ -31,7 +41,7 @@ class Database:
 					records = [r[0] for r in records]
 			return records
 		except pymysql.Error as msg:
-			logging.error('MySQL execute failed! Error:%s' % msg)
+			self.logging.error('MySQL execute failed! Error:%s' % msg)
 
 	def _commit(self, sql=''):
 		u"""
@@ -45,7 +55,7 @@ class Database:
 		except pymysql.Error as msg:
 			self._con.rollback()
 			error = 'MySQL execute failed! Error:%s' % msg
-			logging.error(error)
+			self.logging.error(error)
 			return error
 
 	def select(self, tablename, fields='*', where_dic='', order='', limit=''):
@@ -83,10 +93,10 @@ class Database:
 				else:
 					raise TypeError('fields input error, please input list fields.')
 			sql += where_sql + order + limit_sql
-			logging.info(sql)
+			self.logging.info(sql)
 			return self._execute(sql)
 		except TypeError as msg:
-			logging.error(msg)
+			self.logging.error(msg)
 
 	def count(self, tablename, where_dic=''):
 		u"""
@@ -108,7 +118,7 @@ class Database:
 		where_sql += '1=1'
 		sql = 'select count(1) from %s where' % tablename
 		sql += where_sql
-		logging.info(sql)
+		self.logging.info(sql)
 		return self._execute(sql)
 
 	def insert(self, tablename, args):
@@ -129,7 +139,7 @@ class Database:
 		value_sql = ' values (' + ','.join(value) + ')'
 		sql = 'insert into %s' % tablename
 		sql += key_sql + value_sql
-		logging.info(sql)
+		self.logging.info(sql)
 		return self._commit(sql)
 
 	def update(self, tablename, new_dict, where_dict):
@@ -151,7 +161,7 @@ class Database:
 			where = key + '=' + value + ' and '
 			where += '1=1'
 		sql = 'update %s set %s where %s' % (tablename, new_sql, where)
-		logging.info(sql)
+		self.logging.info(sql)
 		return self._commit(sql)
 
 	def delete(self, tablename, where_dict):
@@ -165,7 +175,7 @@ class Database:
 			where_sql = k + '=\'' + v + '\'' + ' and '
 		where_sql += '1=1'
 		sql = 'delete from %s where %s' % (tablename, where_sql)
-		logging.info(sql)
+		self.logging.info(sql)
 		return self._commit(sql)
 
 	def close(self):
