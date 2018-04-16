@@ -9,6 +9,7 @@ from data import configure
 from suds.client import Client
 from math import ceil
 import unittest
+import time
 
 
 class Manufacturer(unittest.TestCase):
@@ -161,16 +162,15 @@ class Manufacturer(unittest.TestCase):
 		self.logging.info('最终参数： %s' % param)
 		response = self.client.service.bmpObjInsert(**param)
 		new_manid = self.data.select(self.tablename, self.field_manid, self.query_exact)
-		new_manid = [str(id) for id in new_manid]
 		self.logging.info('mysql data new_manid is %s' % new_manid)
 		self.logging.info('response manid is %s' % response['resultVal'])
 		self.assertEqual(response['errorCode'], 0)
 		self.assertEqual(response['errorString'], None)
-		self.assertIn(response['resultVal'], new_manid)
+		self.assertEqual(response['resultVal'], str(new_manid))
 
 		# 查询最后一页
 		records = self.data.count(self.tablename)  # 计算总记录数
-		page = ceil(records/20)
+		page = ceil(records / 20)
 		id_database_list = self.data.select(self.tablename, self.field_manid,
 											limit='%d,%d' % (page * 20 - 20, 20))
 
@@ -187,9 +187,76 @@ class Manufacturer(unittest.TestCase):
 	def test_add_model(self):
 		u"""测试成功添加型号"""
 		'''先查看厂商下型号不为空的记录，如果为0，即全部有型号，则调用insert，若为1，取manid，作为update参数，添加后显示最后一页'''
+		# 处理数据，避免报错，绕过现存bug
+		where_field = self.query_exact.copy()
+		where_field['FIELD_1'] = 'Null'
+		judge = self.data.count(self.tablename, where_dic=where_field)
+		if judge > 1:
+			de_id = self.data.select(self.tablename, self.field_manid, where_dic=self.query_exact)
+			for i in range(1, len(de_id) + 1):
+				self.data.delete(self.tablename, where_dict={self.field_manid: '%s'} % i)
+
+		mysql_total0 = self.data.count(self.tablename, where_dic=where_field)
+		xml_desc, xml_desc_total = self.query.get_query_result(self.origin, origintag='IsModelUP',
+																		resulttag='Record/MAN_DESC')
+		self.assertEqual(mysql_total0, int(xml_desc_total))
+		mysql_total1 = self.data.count(self.tablename, where_dic={'MAN_NAME': 'H3C'})
+		xml_desc, xml_desc_total = self.query.get_query_result(self.origin, origintag='IsModelIN',
+															   resulttag='Record/MAN_DESC')
+		self.assertEqual(mysql_total1, int(xml_desc_total))
+		for my_total in (mysql_total0, mysql_total1):
+			if my_total == 0:
+				up_id = self.data.select(self.tablename, self.field_manid, where_dic=self.query_exact)
+				self.para_xml.update_value('UpdateModel/BMP_MANUFACTURERS/MAN_ID', up_id)
+				param = self.para_xml.get_case_param(tag='UpdateModel', para='objXml')
+				param['tableName'] = 'BMP_MANUFACTURERS'
+				self.logging.info('最终参数： %s' % param)
+				response = self.client.service.bmpObjUpdate(**param)
+				self.assertEqual(response['errorCode'], 0)
+				self.assertEqual(response['resultVal'], '1')
+			elif my_total != 0:
+				self.data.delete(self.tablename, where_dict={'FIELD_1': '型号1'})
+				param = self.para_xml.get_case_param(tag='InsertModel', para='objXml')
+				param['tableName'] = 'BMP_MANUFACTURERS'
+				self.logging.info('最终参数： %s' % param)
+				response = self.client.service.bmpObjInsert(**param)
+				new_manid = self.data.select(self.tablename, self.field_manid, where_dic={'FIELD_1': '型号1'})
+				self.logging.info('mysql data new_manid is %s' % new_manid)
+				self.logging.info('response manid is %s' % response['resultVal'])
+				self.assertEqual(response['errorCode'], 0)
+				self.assertEqual(response['errorString'], None)
+				self.assertEqual(response['resultVal'], str(new_manid))
+
+		# 查询最后一页
+		records = self.data.count(self.tablename)  # 计算总记录数
+		page = ceil(records / 20)
+		id_database_list = self.data.select(self.tablename, self.field_manid,
+											limit='%d,%d' % (page * 20 - 20, 20))
+		id_xml_list, total = self.query.get_query_result(self.origin, page, 'Manufacturer', 'Record/MAN_ID')
+		self.assertEqual(id_database_list, id_xml_list)
+		self.assertEqual(records, int(total))
+
+	def test_success_delete(self):
+		del_id1 = self.data.select(self.tablename, self.field_manid, self.query_exact)
+		del_id2 = self.data.select(self.tablename, self.field_manid, where_dic={'FIELD_1': '型号1'})
+		for del_id in (del_id1, del_id2):
+			parm = {'tableName': 'BMP_MANUFACTURERS', 'objId': del_id}
+			response = self.client.service.bmpObjDelete(**parm)
+			self.assertEqual(response['errorCode'], 0)
+			self.assertEqual(response['errorString'], None)
+			self.assertEqual(response['resultVal'], '1')
+
+		# 查询最后一页
+		self.data.commit()
+		records = self.data.count(self.tablename)  # 计算总记录数
+		page = ceil(records / 20)
+		id_database_list = self.data.select(self.tablename, self.field_manid,
+											limit='%d,%d' % (page * 20 - 20, 20))
+		id_xml_list, total = self.query.get_query_result(self.origin, page, 'Manufacturer', 'Record/MAN_ID')
+		self.assertEqual(id_database_list, id_xml_list)
+		self.assertEqual(records, int(total))
 
 	@classmethod
 	def tearDownClass(cls):
-
 		cls.data.close()
 
