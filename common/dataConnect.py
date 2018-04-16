@@ -178,6 +178,9 @@ class Database:
 		self.logging.info(sql)
 		return self._commit(sql)
 
+	def commit(self):
+		self._con.commit()
+
 	def close(self):
 		self._con.close()
 
