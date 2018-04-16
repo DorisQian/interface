@@ -16,8 +16,7 @@ def log(name):
     logger.setLevel('INFO')
 
     path = os.getcwd().split('interface')[0] + 'interface' + os.sep + 'logs' + os.sep
-    date = time.strftime('%Y-%m-%d')
-    file = path + date + '.log'
+    file = path + 'interface'
 
     ch = logging.StreamHandler()
     # ch.setLevel(self.level)
