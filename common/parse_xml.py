@@ -88,6 +88,18 @@ class Parse:
 		with open(self._file, 'wb') as f:
 			self._tree.write(f, encoding='UTF-8', xml_declaration=True)
 
+	def update_value(self, node, value):
+		u"""
+		修改xml内容
+		:param node: 具体要修改的标签
+		:param value: 修改后的值
+		:return: 重写xml文件
+		"""
+		for elem in self._tree.iterfind(node):
+			elem.text = str(value)
+		with open(self._file, 'wb') as f:
+			self._tree.write(f, encoding='UTF-8', xml_declaration=True)
+
 	def get_case_param(self, total=0, change=0, page=1, tag='', para='queryInfo'):
 		u"""
 		封装xml各方法，实现参数、标签值的获取和xml的改变
