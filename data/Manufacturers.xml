@@ -5,7 +5,7 @@
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>3</CurrentPage>
+        <CurrentPage>4</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
         <OrderBy />
@@ -173,25 +173,25 @@
     <ResultFields>DISTINCT M.MAN_NAME</ResultFields>
 </SqlQuery>
 </Manuname> 取得所有去重厂商名称
-<IsModel>
+<IsModelUP>
 <SqlQuery>
     <Conditions>
         <SC>
             <SLT>0</SLT>
             <PN>MAN_NAME</PN>
-            <PV>123</PV>
+            <PV>测试添加test_add</PV>
             <SRT>0</SRT>
             <SPT>0</SPT>
         </SC>
         <SC>
             <SLT>0</SLT>
             <PN>FIELD_1</PN>
-            <PV></PV>
+            <PV />
             <SRT>14</SRT>
             <SPT>0</SPT>
         </SC>
     </Conditions>
-    <KeyId></KeyId>
+    <KeyId />
     <QueryTable>
         <TableName>BMP_MANUFACTURERS</TableName>
         <AliasName>M</AliasName>
@@ -199,19 +199,45 @@
     <ResultFields>MAN_DESC</ResultFields>
 </SqlQuery>
 
-</IsModel> 查询厂商下是否有型号，判断下一个方法
+</IsModelUP> 查询厂商下是否有型号，判断下一个方法, update
+<IsModelIN>
+<SqlQuery>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>MAN_NAME</PN>
+            <PV>H3C</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+        <SC>
+            <SLT>0</SLT>
+            <PN>FIELD_1</PN>
+            <PV />
+            <SRT>14</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+    <KeyId />
+    <QueryTable>
+        <TableName>BMP_MANUFACTURERS</TableName>
+        <AliasName>M</AliasName>
+    </QueryTable>
+    <ResultFields>MAN_DESC</ResultFields>
+</SqlQuery>
+</IsModelIN> 查询厂商下是否有型号，判断下一个方法,insert
 <IdandDesc>
 <SqlQuery>
     <Conditions>
         <SC>
             <SLT>0</SLT>
             <PN>MAN_NAME</PN>
-            <PV>123</PV>
+            <PV>测试添加test_add</PV>
             <SRT>0</SRT>
             <SPT>0</SPT>
         </SC>
     </Conditions>
-    <KeyId></KeyId>
+    <KeyId />
     <QueryTable>
         <TableName>BMP_MANUFACTURERS</TableName>
         <AliasName>M</AliasName>
@@ -241,20 +267,21 @@
 
 <InsertModel>
 <BMP_MANUFACTURERS>
-    <MAN_NAME>测试添加test_add</MAN_NAME>
+    <MAN_NAME>H3C</MAN_NAME>
     <CLASS_ID>100105</CLASS_ID>
-    <FIELD_1>型号</FIELD_1>
-    <MAN_DESC>测试添加test_add描述</MAN_DESC>
+    <FIELD_1>型号1</FIELD_1>
+    <MAN_DESC>h3c</MAN_DESC>
 </BMP_MANUFACTURERS>
 </InsertModel>增加型号
 <UpdateModel>
 <BMP_MANUFACTURERS>
-    <MAN_NAME>厂商</MAN_NAME>
+    <MAN_NAME>测试添加test_add</MAN_NAME>
     <CLASS_ID>100105</CLASS_ID>
     <FIELD_1>型号</FIELD_1>
     <MAN_DESC>描述</MAN_DESC>
-    <MAN_ID>286</MAN_ID>
+    <MAN_ID>312</MAN_ID>
 </BMP_MANUFACTURERS>
 </UpdateModel> 增加型号，更新记录
+
 
 </node>
