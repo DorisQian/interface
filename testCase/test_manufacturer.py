@@ -9,7 +9,7 @@ from data import configure
 from suds.client import Client
 from math import ceil
 import unittest
-import time
+import os
 
 
 class Manufacturer(unittest.TestCase):
@@ -17,10 +17,10 @@ class Manufacturer(unittest.TestCase):
 
 	@classmethod
 	def setUpClass(cls):
-		cls.logging = log('test')
+		cls.logging = log(os.path.basename(__file__))
 		cls.logging.info("start test manufacturer")
 		cls.data = Database()
-		cls.url = configure.conf['url']
+		cls.url = configure.conf['base_url'] + 'BMPSystemService?wsdl'
 		cls.result = configure.conf['result']
 		cls.origin = configure.manufacture['origin']
 		# 查询参数

@@ -11,7 +11,7 @@ import os
 class Query:
 	def __init__(self):
 		self.logging = log(os.path.basename(__file__))
-		self._url = configure.conf['url']
+		self._url = configure.conf['base_url'] + 'BMPSystemService?wsdl'
 		self._client = Client(self._url)
 		self._file = configure.conf['result_file']
 		self._result = configure.conf['result']
