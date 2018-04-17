@@ -1,48 +1,50 @@
 # !/usr/bin/env python3
 # -*- coding=utf-8 -*-
 
-import unittest
 from suds.client import Client
-from common.Logger import Logger
+from common.Logger import log
+from data.configure import conf
+import unittest
+import os
 
 
 class Login(unittest.TestCase):
     """
     test login interface
     """
-    logger = Logger('INFO')
 
     @classmethod
     def setUpClass(cls):
-        url = 'http://172.17.1.206:8888/SOC2.0/services/UUMSystemService?wsdl'
-        cls.client = Client(url)
-        #print(cls.client)
+        cls.logger = log(os.path.basename(__file__))
+        cls.logger.info("Begin test Login...")
+        cls.url = conf['base_url'] + 'UUMSystemService?wsdl'
+        cls.client = Client(cls.url)
+
+    def test_wrong_username(self):
+        u"""无效用户"""
+        param = {'loginId': 'wronguser', 'passWord': 'password'}
+        response = self.client.service.uumCheckingUserLogin(**param)
+        self.assertEqual(response['errorCode'], -1)
+        self.assertEqual(response['errorString'], '无效的登录用户!')
+        self.assertEqual(response['resultVal'], None)
 
     def test_wrong_password(self):
-        u"""
-        密码错误
-        :return:
-        """
+        u"""密码错误"""
         param = {'loginId': 'cfgadmin', 'passWord': ''}
         result = self.client.service.uumCheckingUserLogin(**param)
         self.logger.info('wrong_password')
-        self.logger.info(result)
         self.assertEqual(result['errorCode'], -1)
         self.assertIn(u"密码错误", result['errorString'])
         self.assertEqual(result['resultVal'], None)
 
     def test_right(self):
-        u"""
-        登录成功
-        :return:
-        """
+        u"""登录成功"""
         param = {'loginId': 'cfgadmin', 'passWord': 'password'}
         result = self.client.service.uumCheckingUserLogin(**param)
         self.logger.info('right')
-        self.logger.info(result)
         self.assertEqual(result['errorCode'], 0)
         self.assertEqual(result['errorString'], None)
-        self.assertIn('cfgadmin',result['resultVal'])
+        self.assertIn('cfgadmin', result['resultVal'])
 
     @classmethod
     def tearDownClass(cls):
