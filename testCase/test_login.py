@@ -46,6 +46,17 @@ class Login(unittest.TestCase):
         self.assertEqual(result['errorString'], None)
         self.assertIn('cfgadmin', result['resultVal'])
 
+    def test_logout(self):
+        u"""登出"""
+        auth = self.client.factory.create('userAuth')
+        auth.userId = 19
+        self.client.set_options(soapheaders=auth)
+        response = self.client.service.uumLogout()
+        self.logger.info('test_logout')
+        self.assertEqual(response['errorCode'], 0)
+        self.assertEqual(response['errorString'], None)
+        self.assertEqual(response['resultVal'], None)
+
     @classmethod
     def tearDownClass(cls):
         pass
