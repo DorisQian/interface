@@ -4,11 +4,12 @@
 import unittest
 import time
 import os
-import logging
 import HTMLTestRunnerCN
-from common.Logger import Logger
+from common.Logger import log
+from common.send_mail import SendMail
 
-logger = Logger()
+
+log = log(os.path.basename(__file__))
 now = time.strftime('%Y-%m-%d_%H-%M-%S')
 
 
@@ -21,13 +22,13 @@ def create_suit():
     test_dir = 'testCase'
     discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py', top_level_dir=None)
     for case in discover:
-        logging.info('add case %s to testSuit' % case)
+        log.info('add case %s to testSuit' % case)
         test_unit.addTest(case)
     return test_unit
 
 report_name = 'reports' + os.sep + now + '_result.html'
 fp = open(report_name, 'wb')
-logging.info('generated report %s' % report_name)
+log.info('generated report %s' % report_name)
 
 runner = HTMLTestRunnerCN.HTMLTestRunner(
     stream=fp,
@@ -39,3 +40,5 @@ if __name__ == '__main__':
     tests = create_suit()
     runner.run(tests)
     fp.close()
+    path = os.path.abspath('.') + os.sep + 'reports' + os.sep
+    SendMail().send_report(path)
