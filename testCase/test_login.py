@@ -44,7 +44,7 @@ class Login(unittest.TestCase):
         self.logger.info('right')
         self.assertEqual(result['errorCode'], 0)
         self.assertEqual(result['errorString'], None)
-        self.assertIn('cfgadmin', result['resultVal'])
+        self.assertEqual('0', result['resultVal'])
 
     def test_logout(self):
         u"""登出"""
