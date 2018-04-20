@@ -4,12 +4,11 @@
 import smtplib
 import os
 import time
-import shutil
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.header import Header
-from public.log import log
+from common.Logger import log
 
 __author__ = 'Doris'
 
