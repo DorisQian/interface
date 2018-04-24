@@ -237,6 +237,7 @@ class Manufacturer(unittest.TestCase):
 		self.assertEqual(records, int(total))
 
 	def test_success_delete(self):
+		u"""测试删除厂商"""
 		del_id1 = self.data.select(self.tablename, self.field_manid, self.query_exact)
 		del_id2 = self.data.select(self.tablename, self.field_manid, where_dic={'FIELD_1': '型号1'})
 		for del_id in (del_id1, del_id2):
