@@ -4,13 +4,13 @@ import os
 
 # http://10.0.190.103:8080/JNMP20/services/BMPSystemService?wsdl
 conf = {
-	'base_url': 'http://172.17.1.207:8080/SOC2.0/services/',
+	'base_url': 'http://172.17.1.208:8888/SOC2.0/services/',
 	'db': {
-		'host': '172.17.1.213',
+		'host': '172.17.1.208',
 		'port': 3306,
 		'user': 'root',
 		'password': 'Anchiva@123',
-		'db': 'cntv',
+		'db': 'jnmp20db',
 		'charset': 'utf8'
 	},
 	'result_file': os.getcwd().split('interface')[0] + 'interface' + os.sep + 'data' + os.sep + 'result.xml',
