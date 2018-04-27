@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node>
+<keyattention>
+<SqlQuery>
+    <KeyId>K.ID</KeyId>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>NMP_KEYATTENTION</TableName>
+        <AliasName>K</AliasName>
+    </QueryTable>
+    <ResultFields>distinct K.ID,K.ATTENTION_NAME,K.VIRUS_TYPE,K.LOG_TYPE</ResultFields>
+    <OrderString />
+    <Conditions />
+</SqlQuery>
+</keyattention>查询所有重点关注
+
+<Exact>
+<SqlQuery>
+    <KeyId>K.ID</KeyId>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>NMP_KEYATTENTION</TableName>
+        <AliasName>K</AliasName>
+    </QueryTable>
+    <ResultFields>distinct K.ID,K.ATTENTION_NAME,K.VIRUS_TYPE,K.LOG_TYPE</ResultFields>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>ATTENTION_NAME</PN>
+            <PV>测试添加重点关注</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Exact>
+</node>
