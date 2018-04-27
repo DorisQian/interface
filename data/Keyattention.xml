@@ -48,5 +48,65 @@
         </SC>
     </Conditions>
 </SqlQuery>
-</Exact>
+</Exact>精确查询
+
+<NullQuery>
+<SqlQuery>
+    <KeyId>K.ID</KeyId>
+    <IsPageResult>1</IsPageResult>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>1</RowCount>
+        <PageCount>1</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>NMP_KEYATTENTION</TableName>
+        <AliasName>K</AliasName>
+    </QueryTable>
+    <ResultFields>distinct K.ID,K.ATTENTION_NAME,K.VIRUS_TYPE,K.LOG_TYPE</ResultFields>
+    <OrderString />
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>ATTENTION_NAME</PN>
+            <PV>测试查询结果为空</PV>
+            <SRT>0</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</NullQuery>查询结果为空
+
+<InsertAttention>
+<NMP_KEYATTENTION>
+    <ATTENTION_NAME>测试接口I/F添加重点关注</ATTENTION_NAME>
+    <VIRUS_TYPE>漏洞</VIRUS_TYPE>
+    <LOG_TYPE>4</LOG_TYPE>
+    <NUM_VAL1>20</NUM_VAL1>
+    <FIRST_HAPPEN_TIME />
+</NMP_KEYATTENTION>
+</InsertAttention>增加重点关注
+<UpdateAttention>
+<NMP_KEYATTENTION>
+    <ID>41</ID>
+    <ATTENTION_NAME>测试添加重点关注2</ATTENTION_NAME>
+    <VIRUS_TYPE>virus</VIRUS_TYPE>
+    <LOG_TYPE>3</LOG_TYPE>
+    <NUM_VAL1>30</NUM_VAL1>
+    <FIRST_HAPPEN_TIME />
+</NMP_KEYATTENTION>
+</UpdateAttention>修改重点关注
+
+<UpdateOrigin>
+<NMP_KEYATTENTION>
+    <ID>41</ID>
+    <ATTENTION_NAME>测试添加重点关注</ATTENTION_NAME>
+    <VIRUS_TYPE>漏洞</VIRUS_TYPE>
+    <LOG_TYPE>2</LOG_TYPE>
+    <NUM_VAL1>0</NUM_VAL1>
+    <FIRST_HAPPEN_TIME />
+</NMP_KEYATTENTION>
+</UpdateOrigin>修改成原始状态
 </node>

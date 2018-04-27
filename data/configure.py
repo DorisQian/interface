@@ -32,5 +32,7 @@ keyattition = {
 	'origin': 'Keyattention.xml',
 	'tablename': 'nmp_keyattention',
 	'field_id': 'ID',
-	'query_exact': {'ATTENTION_NAME': '测试添加重点关注'}
+	'query_exact': {'ATTENTION_NAME': '测试添加重点关注'},
+	'query_null': {'ATTENTION_NAME': '测试查询结果为空'},
+	'query_add': {'ATTENTION_NAME': '测试接口I/F添加重点关注'}
 }

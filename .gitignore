@@ -1,4 +1,4 @@
 #python
 *.pyc
 .DS_Store
-
+.idea/
