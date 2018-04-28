@@ -9,9 +9,7 @@ import os
 
 
 class Login(unittest.TestCase):
-    """
-    test login interface
-    """
+    u"""测试登录接口"""
 
     @classmethod
     def setUpClass(cls):
