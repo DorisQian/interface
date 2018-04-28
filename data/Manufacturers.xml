@@ -5,7 +5,7 @@
     <IsPageResult>1</IsPageResult>
     <PageInfo>
         <PageSize>20</PageSize>
-        <CurrentPage>4</CurrentPage>
+        <CurrentPage>3</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
         <OrderBy />
@@ -206,7 +206,7 @@
         <SC>
             <SLT>0</SLT>
             <PN>MAN_NAME</PN>
-            <PV>H3C</PV>
+            <PV>微软</PV>
             <SRT>0</SRT>
             <SPT>0</SPT>
         </SC>
@@ -270,7 +270,7 @@
     <MAN_NAME>H3C</MAN_NAME>
     <CLASS_ID>100105</CLASS_ID>
     <FIELD_1>型号1</FIELD_1>
-    <MAN_DESC>h3c</MAN_DESC>
+    <MAN_DESC>微软</MAN_DESC>
 </BMP_MANUFACTURERS>
 </InsertModel>增加型号
 <UpdateModel>
@@ -279,7 +279,7 @@
     <CLASS_ID>100105</CLASS_ID>
     <FIELD_1>型号</FIELD_1>
     <MAN_DESC>描述</MAN_DESC>
-    <MAN_ID>312</MAN_ID>
+    <MAN_ID>274</MAN_ID>
 </BMP_MANUFACTURERS>
 </UpdateModel> 增加型号，更新记录
 

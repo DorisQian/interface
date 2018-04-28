@@ -200,7 +200,7 @@ class Manufacturer(unittest.TestCase):
 		xml_desc, xml_desc_total = self.query.get_query_result(self.origin, origintag='IsModelUP',
 																		resulttag='Record/MAN_DESC')
 		self.assertEqual(mysql_total0, int(xml_desc_total))
-		mysql_total1 = self.data.count(self.tablename, where_dic={'MAN_NAME': 'H3C'})
+		mysql_total1 = self.data.count(self.tablename, where_dic={'MAN_NAME': '微软'})
 		xml_desc, xml_desc_total = self.query.get_query_result(self.origin, origintag='IsModelIN',
 															   resulttag='Record/MAN_DESC')
 		self.assertEqual(mysql_total1, int(xml_desc_total))
@@ -241,6 +241,7 @@ class Manufacturer(unittest.TestCase):
 		del_id1 = self.data.select(self.tablename, self.field_manid, self.query_exact)
 		del_id2 = self.data.select(self.tablename, self.field_manid, where_dic={'FIELD_1': '型号1'})
 		for del_id in (del_id1, del_id2):
+			print(del_id)
 			parm = {'tableName': 'BMP_MANUFACTURERS', 'objId': del_id}
 			response = self.client.service.bmpObjDelete(**parm)
 			self.assertEqual(response['errorCode'], 0)
