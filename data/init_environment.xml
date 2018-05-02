@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node>
+<InsertAttention>
+<NMP_KEYATTENTION>
+    <ATTENTION_NAME>测试添加重点关注</ATTENTION_NAME>
+    <VIRUS_TYPE>漏洞</VIRUS_TYPE>
+    <LOG_TYPE>2</LOG_TYPE>
+    <NUM_VAL1>0</NUM_VAL1>
+    <FIRST_HAPPEN_TIME />
+</NMP_KEYATTENTION>
+</InsertAttention>增加重点关注
+
+</node>
