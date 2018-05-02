@@ -22,13 +22,13 @@ class KeyAttention(unittest.TestCase):
 		cls.data = Database()
 		cls.url = configure.conf['base_url'] + 'BMPSystemService?wsdl'
 		cls.result = configure.conf['result']
-		cls.origin = configure.keyattition['origin']
+		cls.origin = configure.keyattention['origin']
 		# 查询参数
-		cls.tablename = configure.keyattition['tablename']
-		cls.field_id = configure.keyattition['field_id'].split(',')
-		cls.query_exact = configure.keyattition['query_exact']
-		cls.query_null = configure.keyattition['query_null']
-		cls.query_add = configure.keyattition['query_add']
+		cls.tablename = configure.keyattention['tablename']
+		cls.field_id = configure.keyattention['field_id'].split(',')
+		cls.query_exact = configure.keyattention['query_exact']
+		cls.query_null = configure.keyattention['query_null']
+		cls.query_add = configure.keyattention['query_add']
 
 		cls.client = Client(cls.url)
 		cls.para_xml = Parse(cls.origin)

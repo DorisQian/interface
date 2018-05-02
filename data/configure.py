@@ -28,7 +28,7 @@ manufacture = {
 	'where_parent': {'parent_id': '11432'}
 }
 
-keyattition = {
+keyattention = {
 	'origin': 'Keyattention.xml',
 	'tablename': 'nmp_keyattention',
 	'field_id': 'ID',
