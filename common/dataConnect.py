@@ -78,7 +78,7 @@ class Database:
 					where_sql = where_sql + k + ' like' + '\'%' + v + '%\'' + ' and '
 				else:
 					where_sql = where_sql + k + '=' + '\'' + v + '\'' + ' and '
-		where_sql += '1=1'
+		where_sql += '1=1 '
 		if limit:
 			limit_sql = ' limit ' + limit
 		else:

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node>
+<knowledgetype>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <KeyId>TYPE_ID</KeyId>
+    <ResultFields>*</ResultFields>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy>order by TYPE_ID desc</OrderBy>
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_KNOWLEDGETYPE</TableName>
+        <AliasName />
+    </QueryTable>
+    <OrderString>order by TYPE_ID desc</OrderString>
+    <Conditions />
+</SqlQuery>
+</knowledgetype>查询所有知识库分类
+
+<InsertKnowledgeTypeFather>
+<BMP_KNOWLEDGETYPE>
+    <TYPE_NAME>test添加I/F父类分类</TYPE_NAME>
+    <TYPE_DESC>test添加I/F父类分类描述</TYPE_DESC>
+    <PARENT_ID />
+</BMP_KNOWLEDGETYPE>
+</InsertKnowledgeTypeFather>添加知识库分类父类
+<InsertKnowledgeTypeChild>
+<BMP_KNOWLEDGETYPE>
+    <TYPE_NAME>test添加I/F子类</TYPE_NAME>
+    <TYPE_DESC>test添加I/F子类描述</TYPE_DESC>
+    <PARENT_ID>25</PARENT_ID>
+</BMP_KNOWLEDGETYPE>
+</InsertKnowledgeTypeChild>添加知识库分类子类
+
+<UpdateKnowledgeType>
+<BMP_KNOWLEDGETYPE>
+    <TYPE_ID>26</TYPE_ID>
+    <TYPE_NAME>test修改I/F子类</TYPE_NAME>
+    <TYPE_DESC>test修改I/F子类描述</TYPE_DESC>
+    <PARENT_ID>10</PARENT_ID>
+</BMP_KNOWLEDGETYPE>
+</UpdateKnowledgeType>修改知识库分类
+</node>

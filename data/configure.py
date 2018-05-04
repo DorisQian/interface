@@ -28,11 +28,21 @@ manufacture = {
 	'where_parent': {'parent_id': '11432'}
 }
 
-keyattition = {
+keyattention = {
 	'origin': 'Keyattention.xml',
 	'tablename': 'nmp_keyattention',
 	'field_id': 'ID',
 	'query_exact': {'ATTENTION_NAME': '测试添加重点关注'},
 	'query_null': {'ATTENTION_NAME': '测试查询结果为空'},
 	'query_add': {'ATTENTION_NAME': '测试接口I/F添加重点关注'}
+}
+
+knowledgetype = {
+	'origin': 'Knowledge_type.xml',
+	'tablename': 'BMP_KNOWLEDGETYPE',
+	'field_id': 'TYPE_ID',
+	'order_by': 'order by type_id desc',
+	'query_add': {'TYPE_NAME': 'test添加I/F父类分类'},
+	'query_add_child': {'TYPE_NAME': 'test添加I/F子类'},
+	'query_update': {'TYPE_NAME': 'test修改I/F子类'}
 }
