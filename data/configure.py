@@ -4,13 +4,13 @@ import os
 
 # http://10.0.190.103:8080/JNMP20/services/BMPSystemService?wsdl
 conf = {
-	'base_url': 'http://172.17.1.208:8888/SOC2.0/services/',
+	'base_url': 'http://172.17.1.207:8080/SOC2.0/services/',
 	'db': {
-		'host': '172.17.1.208',
+		'host': '172.17.1.213',
 		'port': 3306,
 		'user': 'root',
 		'password': 'Anchiva@123',
-		'db': 'jnmp20db',
+		'db': 'cntv',
 		'charset': 'utf8'
 	},
 	'result_file': os.getcwd().split('interface')[0] + 'interface' + os.sep + 'data' + os.sep + 'result.xml',
@@ -45,4 +45,14 @@ knowledgetype = {
 	'query_add': {'TYPE_NAME': 'test添加I/F父类分类'},
 	'query_add_child': {'TYPE_NAME': 'test添加I/F子类'},
 	'query_update': {'TYPE_NAME': 'test修改I/F子类'}
+}
+
+Knowledge = {
+	'origin': 'Knowledge.xml',
+	'knowledge_table': 'BMP_KNOWLEDGE',
+	'comment_table': 'BMP_KNOWLEDGECOMMENT',
+	'k_id': 'knowledge_id',
+	'c_id': 'comment_id',
+	'query_add_k': {'KNOWLEDGE_TITLE': 'test添加知识库标题'},
+	'query_add_c': {'COMMENT_CONTENT': 'test添加第一条评论'}
 }
