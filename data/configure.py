@@ -54,5 +54,17 @@ Knowledge = {
 	'k_id': 'knowledge_id',
 	'c_id': 'comment_id',
 	'query_add_k': {'KNOWLEDGE_TITLE': 'test添加知识库标题'},
-	'query_add_c': {'COMMENT_CONTENT': 'test添加第一条评论'}
+	'query_add_c': {'COMMENT_CONTENT': '@test添加第一条评论@'},
+	'query_integration': {'KNOWLEDGE_TITLE': 'like test',
+						'KNOWLEDGE_SUMMARY': 'like test',
+						'KNOWLEDGE_SOURCE': 'like test',
+						'CREATE_USERID': '19',
+						'UPDATE_USERID': '19'},
+	'query_title': {'KNOWLEDGE_TITLE': 'like test'},
+	'query_keyword': {'KNOWLEDGE_SUMMARY': 'like test'},
+	'query_source': {'KNOWLEDGE_SOURCE': 'like test'},
+	'query_type': {'TYPE_ID': '11'},
+	'query_creater': {'CREATE_USERID': '19'},
+	'delete': {'KNOWLEDGE_TITLE': 'test修改知识库标题'},
+	'order_by': 'order by create_time desc'
 }

@@ -9,7 +9,7 @@
         <CurrentPage>1</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
-        <OrderBy></OrderBy>
+        <OrderBy />
     </PageInfo>
     <QueryTable>
         <TableName>BMP_KNOWLEDGE</TableName>
@@ -43,7 +43,7 @@
     </QueryTable>
     <ResultFields>*</ResultFields>
     <OrderString>ORDER BY k.CREATE_TIME DESC</OrderString>
-    <Conditions></Conditions>
+    <Conditions />
 </SqlQuery>
 </Knowledge>查询所有知识库
 
@@ -56,7 +56,7 @@
         <CurrentPage>1</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
-        <OrderBy></OrderBy>
+        <OrderBy />
     </PageInfo>
     <QueryTable>
         <TableName>BMP_KNOWLEDGE</TableName>
@@ -153,7 +153,7 @@
         <CurrentPage>1</CurrentPage>
         <RowCount>0</RowCount>
         <PageCount>0</PageCount>
-        <OrderBy></OrderBy>
+        <OrderBy />
     </PageInfo>
     <QueryTable>
         <TableName>BMP_KNOWLEDGE</TableName>
@@ -198,13 +198,229 @@
     </Conditions>
 </SqlQuery>
 </Querytitle>  按标题筛选
+<Querykeyword>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <KeyId>k.KNOWLEDGE_ID</KeyId>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_KNOWLEDGE</TableName>
+        <AliasName>k</AliasName>
+        <JoinTables>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>UUM_USER</TableName>
+                    <AliasName>u</AliasName>
+                </QueryTable>
+                <JoinCondition>k.CREATE_USERID=u.ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledge2type</TableName>
+                    <AliasName>kt</AliasName>
+                </QueryTable>
+                <JoinCondition>k.KNOWLEDGE_ID=kt.KNOWLEDGE_ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledgetype</TableName>
+                    <AliasName>t</AliasName>
+                </QueryTable>
+                <JoinCondition>t.TYPE_ID=kt.TYPE_ID</JoinCondition>
+            </JoinTable>
+        </JoinTables>
+    </QueryTable>
+    <ResultFields>*</ResultFields>
+    <OrderString>ORDER BY k.CREATE_TIME DESC</OrderString>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>k.KNOWLEDGE_SUMMARY</PN>
+            <PV>test</PV>
+            <SRT>6</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Querykeyword>按关键字筛选
+<Querysource>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <KeyId>k.KNOWLEDGE_ID</KeyId>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_KNOWLEDGE</TableName>
+        <AliasName>k</AliasName>
+        <JoinTables>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>UUM_USER</TableName>
+                    <AliasName>u</AliasName>
+                </QueryTable>
+                <JoinCondition>k.CREATE_USERID=u.ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledge2type</TableName>
+                    <AliasName>kt</AliasName>
+                </QueryTable>
+                <JoinCondition>k.KNOWLEDGE_ID=kt.KNOWLEDGE_ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledgetype</TableName>
+                    <AliasName>t</AliasName>
+                </QueryTable>
+                <JoinCondition>t.TYPE_ID=kt.TYPE_ID</JoinCondition>
+            </JoinTable>
+        </JoinTables>
+    </QueryTable>
+    <ResultFields>*</ResultFields>
+    <OrderString>ORDER BY k.CREATE_TIME DESC</OrderString>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>k.KNOWLEDGE_SOURCE</PN>
+            <PV>test</PV>
+            <SRT>6</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Querysource>按来源筛选
+<Querytype>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <KeyId>k.KNOWLEDGE_ID</KeyId>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_KNOWLEDGE</TableName>
+        <AliasName>k</AliasName>
+        <JoinTables>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>UUM_USER</TableName>
+                    <AliasName>u</AliasName>
+                </QueryTable>
+                <JoinCondition>k.CREATE_USERID=u.ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledge2type</TableName>
+                    <AliasName>kt</AliasName>
+                </QueryTable>
+                <JoinCondition>k.KNOWLEDGE_ID=kt.KNOWLEDGE_ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledgetype</TableName>
+                    <AliasName>t</AliasName>
+                </QueryTable>
+                <JoinCondition>t.TYPE_ID=kt.TYPE_ID</JoinCondition>
+            </JoinTable>
+        </JoinTables>
+    </QueryTable>
+    <ResultFields>*</ResultFields>
+    <OrderString>ORDER BY k.CREATE_TIME DESC</OrderString>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>kt.TYPE_ID</PN>
+            <PV>11</PV>
+            <SRT>6</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Querytype>按类型筛选
+<Querycreater>
+<SqlQuery>
+    <IsPageResult>1</IsPageResult>
+    <KeyId>k.KNOWLEDGE_ID</KeyId>
+    <PageInfo>
+        <PageSize>20</PageSize>
+        <CurrentPage>1</CurrentPage>
+        <RowCount>0</RowCount>
+        <PageCount>0</PageCount>
+        <OrderBy />
+    </PageInfo>
+    <QueryTable>
+        <TableName>BMP_KNOWLEDGE</TableName>
+        <AliasName>k</AliasName>
+        <JoinTables>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>UUM_USER</TableName>
+                    <AliasName>u</AliasName>
+                </QueryTable>
+                <JoinCondition>k.CREATE_USERID=u.ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledge2type</TableName>
+                    <AliasName>kt</AliasName>
+                </QueryTable>
+                <JoinCondition>k.KNOWLEDGE_ID=kt.KNOWLEDGE_ID</JoinCondition>
+            </JoinTable>
+            <JoinTable>
+                <JoinType>1</JoinType>
+                <QueryTable>
+                    <TableName>bmp_knowledgetype</TableName>
+                    <AliasName>t</AliasName>
+                </QueryTable>
+                <JoinCondition>t.TYPE_ID=kt.TYPE_ID</JoinCondition>
+            </JoinTable>
+        </JoinTables>
+    </QueryTable>
+    <ResultFields>*</ResultFields>
+    <OrderString>ORDER BY k.CREATE_TIME DESC</OrderString>
+    <Conditions>
+        <SC>
+            <SLT>0</SLT>
+            <PN>k.CREATE_USERID</PN>
+            <PV>19</PV>
+            <SRT>6</SRT>
+            <SPT>0</SPT>
+        </SC>
+    </Conditions>
+</SqlQuery>
+</Querycreater>按创建者筛选
 
 <Detail>
 <SqlQuery>
-    <KeyId></KeyId>
+    <KeyId />
     <QueryTable>
         <TableName>BMP_KNOWLEDGE</TableName>
-        <AliasName></AliasName>
+        <AliasName />
     </QueryTable>
     <Conditions>
         <SC>
@@ -220,10 +436,10 @@
 </Detail>查询详情
 <Attachment>
 <SqlQuery>
-    <KeyId></KeyId>
+    <KeyId />
     <QueryTable>
         <TableName>BMP_KNOWLEDGEATTACHMENT</TableName>
-        <AliasName></AliasName>
+        <AliasName />
     </QueryTable>
     <Conditions>
         <SC>
@@ -239,7 +455,7 @@
 </Attachment>查询附件
 <Comment>
 <SqlQuery>
-    <KeyId></KeyId>
+    <KeyId />
     <QueryTable>
         <TableName>BMP_KNOWLEDGECOMMENT</TableName>
         <AliasName>c</AliasName>
@@ -275,41 +491,41 @@
     <KNOWLEDGE_CONTENT>@test知识库内容@</KNOWLEDGE_CONTENT>
     <KNOWLEDGE_SOURCE>test来源</KNOWLEDGE_SOURCE>
     <CREATE_USERID>19</CREATE_USERID>
-    <CREATE_TIME>2018-05-07 13:39:01</CREATE_TIME>
-    <UPDATE_TIME>2018-05-07 13:39:01</UPDATE_TIME>
+    <CREATE_TIME>2018-05-08 17:00:47</CREATE_TIME>
+    <UPDATE_TIME>2018-05-08 17:00:47</UPDATE_TIME>
     <CLICK_COUNT>0</CLICK_COUNT>
     <COMMENT_COUNT>0</COMMENT_COUNT>
     <KNOWLEDGE_TYPES>10,</KNOWLEDGE_TYPES>
-    <CLASS_ID></CLASS_ID>
+    <CLASS_ID />
 </BMP_KNOWLEDGE>
 </InsertKnowledge>插入知识库
 <InsertComment>
 <BMP_KNOWLEDGECOMMENT>
-    <KNOWLEDGE_ID>98</KNOWLEDGE_ID>
+    <KNOWLEDGE_ID>107</KNOWLEDGE_ID>
     <COMMENT_CONTENT>@test添加第一条评论@</COMMENT_CONTENT>
     <CREATE_USERID>19</CREATE_USERID>
-    <CREATE_TIME>2018-05-07 13:46:26</CREATE_TIME>
+    <CREATE_TIME>2018-05-08 17:00:48</CREATE_TIME>
 </BMP_KNOWLEDGECOMMENT>
 </InsertComment>插入评论
 <UpdateKnowledge>
 <BMP_KNOWLEDGE>
-    <KNOWLEDGE_ID>98</KNOWLEDGE_ID>
+    <KNOWLEDGE_ID>107</KNOWLEDGE_ID>
     <KNOWLEDGE_TITLE>test修改知识库标题</KNOWLEDGE_TITLE>
     <KNOWLEDGE_SUMMARY>test修改关键字</KNOWLEDGE_SUMMARY>
     <KNOWLEDGE_CONTENT>@test知识库内容修改@</KNOWLEDGE_CONTENT>
-    <UPDATE_TIME>2018-05-07 14:01:55</UPDATE_TIME>
+    <UPDATE_TIME>2018-05-08 17:00:48</UPDATE_TIME>
     <KNOWLEDGE_TYPES>11,</KNOWLEDGE_TYPES>
     <KNOWLEDGE_SOURCE>test来源修改</KNOWLEDGE_SOURCE>
     <UPDATE_USERID>19</UPDATE_USERID>
-    <CLASS_ID></CLASS_ID>
+    <CLASS_ID />
 </BMP_KNOWLEDGE>
 </UpdateKnowledge>编辑知识库
 <UpdateComment>
 <BMP_KNOWLEDGECOMMENT>
-    <COMMENT_ID>15</COMMENT_ID>
-    <KNOWLEDGE_ID>98</KNOWLEDGE_ID>
+    <COMMENT_ID>20</COMMENT_ID>
+    <KNOWLEDGE_ID>107</KNOWLEDGE_ID>
     <COMMENT_CONTENT>@test添加第一条评论-编辑评论@</COMMENT_CONTENT>
-    <CREATE_TIME>2018-05-07 13:52:04</CREATE_TIME>
+    <CREATE_TIME>2018-05-08 17:00:48</CREATE_TIME>
 </BMP_KNOWLEDGECOMMENT>
 </UpdateComment>编辑评论
 </node>
