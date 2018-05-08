@@ -51,10 +51,36 @@ class InitEnvironment:
 		增加相应资产
 		:return:
 		"""
+		pass
+
+	def init_knowledge(self):
+		u"""
+		初始化知识库
+		增加知识库分类为10：漏洞信息的知识库，用于测试删除被引用分类时使用
+		:return:
+		"""
+		tablename = configure.Knowledge['knowledge_table']
+		where = {'knowledge_title': '初始化init添加知识库标题'}
+		count = self.data.count(tablename, where_dic=where)
+		if count == 1:
+			pass
+		else:
+			self.logger.info('add knowledge dates')
+			param = self.para_xml.get_case_param(tag='InsertKnowledge', para='objXml')
+			param['tableName'] = tablename
+			self.logger.info('最终参数： %s' % param)
+			self.client.service.bmpObjInsert(**param)
+			self.data.commit()
+			count = self.data.count(tablename, where_dic=where)
+			if count == 1:
+				self.logger.info('init key attention success!')
+			else:
+				self.logger.info('init key attention failed!')
 
 	def start_init(self):
 		self.init_keyattention()
 		self.init_manufacturers()
+		self.init_knowledge()
 
 if __name__ == '__main__':
 	init = InitEnvironment()
