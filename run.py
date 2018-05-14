@@ -7,6 +7,7 @@ import os
 import HTMLTestRunnerCN
 from common.Logger import log
 from common.send_mail import SendMail
+from init_environment import InitEnvironment
 
 
 log = log(os.path.basename(__file__))
@@ -37,6 +38,8 @@ runner = HTMLTestRunnerCN.HTMLTestRunner(
 )
 
 if __name__ == '__main__':
+    init = InitEnvironment()
+    init.start_init()
     tests = create_suit()
     runner.run(tests)
     fp.close()
