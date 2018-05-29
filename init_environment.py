@@ -68,9 +68,9 @@ class InitEnvironment:
 		else:
 			self.logger.info('add knowledge dates')
 			now = time.strftime('%Y-%m-%d %H:%M:%S')
-			self.para_xml.update_value(node='InsertKnowledge/BMP_KNOWLEDGE/CREATE_TIME', value=now)
-			self.para_xml.update_value(node='InsertKnowledge/BMP_KNOWLEDGE/UPDATE_TIME', value=now)
-			param = self.para_xml.get_case_param(tag='InsertKnowledge', para='objXml')
+			self.para_xml.update_value(node='InsertKnowledgeforinit/BMP_KNOWLEDGE/CREATE_TIME', value=now)
+			self.para_xml.update_value(node='InsertKnowledgeforinit/BMP_KNOWLEDGE/UPDATE_TIME', value=now)
+			param = self.para_xml.get_case_param(tag='InsertKnowledgeforinit', para='objXml')
 			param['tableName'] = tablename
 			self.logger.info('最终参数： %s' % param)
 			self.client.service.bmpObjInsert(**param)
@@ -97,11 +97,11 @@ class InitEnvironment:
 			self.logger.info('最终参数： %s' % param)
 			self.client.service.bmpObjInsert(**param)
 			self.data.commit()
-			count = self.data.count(tablename, where_dic=where)
-			if count == 1:
-				self.logger.info('add knowledge success!')
+			count_1 = self.data.count(tablename, where_dic=where_1)
+			if count_1 == 1:
+				self.logger.info('add knowledge_delete1 success!')
 			else:
-				self.logger.info('add knowledge failed!')
+				self.logger.info('add knowledge_delete1 failed!')
 
 		if count_2 == 1:
 			pass
@@ -115,11 +115,11 @@ class InitEnvironment:
 			self.logger.info('最终参数： %s' % param)
 			self.client.service.bmpObjInsert(**param)
 			self.data.commit()
-			count = self.data.count(tablename, where_dic=where)
-			if count == 1:
-				self.logger.info('add knowledge success!')
+			count_2 = self.data.count(tablename, where_dic=where_2)
+			if count_2 == 1:
+				self.logger.info('add knowledge_delete2 success!')
 			else:
-				self.logger.info('add knowledge failed!')
+				self.logger.info('add knowledge_delete2 failed!')
 
 	def start_init(self):
 		self.init_keyattention()

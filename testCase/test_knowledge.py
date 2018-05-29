@@ -133,10 +133,14 @@ class Knowledge(unittest.TestCase):
 		sql_id = self.data.select(self.k_table, fields=self.k_id, where_dic=self.query_integration)
 		relation_id = self.data.select('bmp_knowledge2type', fields=self.k_id, where_dic=self.query_type)
 		id_list = []
-		for id in sql_id:
-			if id in relation_id:
-				id_list.append(id)
-		sql_total = len(id_list)
+		if type(sql_id) is not int:
+			for id in sql_id:
+				if id in relation_id:
+					id_list.append(id)
+			sql_total = len(id_list)
+		else:
+			sql_total = 1
+			id_list.append(sql_id)
 		try:
 			self.assertEqual(sql_total, int(total))
 			self.assertEqual(id_list, list(set(xml_id)))
@@ -150,8 +154,12 @@ class Knowledge(unittest.TestCase):
 		sql_total = self.data.count(self.k_table, where_dic=self.query_title)
 		sql_id = self.data.select(self.k_table, fields=self.k_id, where_dic=self.query_title, order=self.order_by)
 		try:
+			if type(sql_id) is int:
+				for xml_id in set(xml_id):
+					self.assertEqual(sql_id, xml_id)
+			else:
+				self.assertEqual(sql_id, list(set(xml_id)))
 			self.assertEqual(sql_total, int(total))
-			self.assertEqual(sql_id, list(set(xml_id)))
 		except Exception as msg:
 			self.logger.warning(msg)
 			raise
@@ -162,8 +170,12 @@ class Knowledge(unittest.TestCase):
 		sql_total = self.data.count(self.k_table, where_dic=self.query_keyword)
 		sql_id = self.data.select(self.k_table, fields=self.k_id, where_dic=self.query_keyword, order=self.order_by)
 		try:
+			if type(sql_id) is int:
+				for xml_id in set(xml_id):
+					self.assertEqual(sql_id, xml_id)
+			else:
+				self.assertEqual(sql_id, list(set(xml_id)))
 			self.assertEqual(sql_total, int(total))
-			self.assertEqual(sql_id, list(set(xml_id)))
 		except Exception as msg:
 			self.logger.warning(msg)
 			raise
@@ -175,8 +187,12 @@ class Knowledge(unittest.TestCase):
 		sql_total = self.data.count(self.k_table, where_dic=self.query_source)
 		sql_id = self.data.select(self.k_table, fields=self.k_id, where_dic=self.query_source, order=self.order_by)
 		try:
+			if type(sql_id) is int:
+				for xml_id in set(xml_id):
+					self.assertEqual(sql_id, xml_id)
+			else:
+				self.assertEqual(sql_id, list(set(xml_id)))
 			self.assertEqual(sql_total, int(total))
-			self.assertEqual(sql_id, list(set(xml_id)))
 		except Exception as msg:
 			self.logger.warning(msg)
 			raise
@@ -188,8 +204,12 @@ class Knowledge(unittest.TestCase):
 		sql_total = self.data.count('bmp_knowledge2type', where_dic=self.query_type)
 		sql_id = self.data.select('bmp_knowledge2type', fields=self.k_id, where_dic=self.query_type)
 		try:
+			if type(sql_id) is int:
+				for xml_id in set(xml_id):
+					self.assertEqual(sql_id, xml_id)
+			else:
+				self.assertEqual(sql_id, list(set(xml_id)))
 			self.assertEqual(sql_total, int(total))
-			self.assertEqual(set(sql_id), set(xml_id))
 		except Exception as msg:
 			self.logger.warning(msg)
 			raise
@@ -202,7 +222,7 @@ class Knowledge(unittest.TestCase):
 		sql_id = self.data.select(self.k_table, fields=self.k_id, where_dic=self.query_create, order=self.order_by)
 		try:
 			self.assertEqual(sql_total, int(total))
-			self.assertEqual(sql_id, list(set(xml_id)))
+			self.assertEqual(sorted(sql_id), sorted(list(set(xml_id))))
 		except Exception as msg:
 			self.logger.warning(msg)
 			raise
