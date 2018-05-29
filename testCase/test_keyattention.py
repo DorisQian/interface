@@ -45,7 +45,7 @@ class KeyAttention(unittest.TestCase):
 													limit='%d,%d' % (current * 20 - 20, 20))
 				id_xml_list, total = self.query.get_query_result(self.origin, current, 'keyattention', 'Record/ID')
 				self.logging.info('id_database_list: %s' % id_database_list)
-				self.assertEqual(id_database_list, id_xml_list)
+				self.assertEqual(sorted(id_database_list), sorted(id_xml_list))
 
 			# 断言总记录数
 			self.logging.info('mysql result is %s' % records)
@@ -88,7 +88,8 @@ class KeyAttention(unittest.TestCase):
 		param['tableName'] = 'NMP_KEYATTENTION'
 		self.logging.info('最终参数： %s' % param)
 		response = self.client.service.bmpObjInsert(**param)
-		new_id = self.data.select(self.tablename, self.field_id, self.query_add, limit='1, 2')
+		# new_id = self.data.select(self.tablename, self.field_id, self.query_add, limit='1, 2')
+		new_id = self.data.select(self.tablename, self.field_id, self.query_add)
 		self.logging.info('mysql data new_manid is %s' % new_id)
 		self.logging.info('response manid is %s' % response['resultVal'])
 		self.assertEqual(response['errorCode'], 0)
@@ -102,7 +103,7 @@ class KeyAttention(unittest.TestCase):
 											limit='%d,%d' % (page * 20 - 20, 20))
 
 		id_xml_list, total = self.query.get_query_result(self.origin, page, 'keyattention', 'Record/ID')
-		self.assertEqual(id_database_list, id_xml_list)
+		self.assertEqual(sorted(id_database_list), sorted(id_xml_list))
 		self.assertEqual(records, int(total))
 
 	def test_update_attention(self):
@@ -140,7 +141,8 @@ class KeyAttention(unittest.TestCase):
 
 	def test_success_delete(self):
 		u"""测试删除重点关注"""
-		del_id = self.data.select(self.tablename, self.field_id, self.query_add, limit='1, 2')
+		# del_id = self.data.select(self.tablename, self.field_id, self.query_add, limit='1, 2')
+		del_id = self.data.select(self.tablename, self.field_id, self.query_add)
 		# del_id2 = self.data.select(self.tablename, self.field_id, where_dic={'FIELD_1': '型号1'})
 		parm = {'tableName': 'NMP_KEYATTENTION', 'objId': del_id}
 		response = self.client.service.bmpObjDelete(**parm)
